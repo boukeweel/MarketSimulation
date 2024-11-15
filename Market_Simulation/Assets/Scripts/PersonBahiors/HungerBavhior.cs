@@ -5,14 +5,19 @@ using UnityEngine;
 public class HungerBavhior : MonoBehaviour
 {
     [field: SerializeField] public float Hunger { get;  set; }
-    [SerializeField] private BioSignSO _bioSign;
+    public BioSignSO BioSign;
+
+    private int _PrivouslyBoughtQuality = 1;
+
+    public Store_Food foodStore;
+
     void Awake()
     {
-        Hunger = Random.Range(0, _bioSign.MaxHunger);
+        Hunger = Random.Range(0, BioSign.MaxHunger);
     }
 
     void Update()
     {
-        Hunger += Time.deltaTime * _bioSign.HungerDepletionRate;
+        Hunger += Time.deltaTime * BioSign.HungerDepletionRate;
     }
 }

@@ -263,6 +263,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &975074706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975074708}
+  - component: {fileID: 975074707}
+  m_Layer: 0
+  m_Name: Food_Store
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &975074707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975074706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d879767a54df24ca86bc59527e1d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodTypes:
+  - foodType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
+    AvailableAmount: 10
+  - foodType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
+    AvailableAmount: 10
+--- !u!4 &975074708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975074706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3851237, y: -0.14505301, z: 0.028485287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431013658
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Hunger>k__BackingField: 0
-  _bioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
+  BioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
 --- !u!114 &1431013660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,8 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hunger: {fileID: 1431013659}
-  _biosign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
+  _money: 2000
 --- !u!114 &1431013661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,4 +469,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 849597869}
   - {fileID: 1843152061}
+  - {fileID: 975074708}
   - {fileID: 1431013662}

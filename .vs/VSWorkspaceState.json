@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Market_Simulation",
+    "\\Market_Simulation\\Assets",
+    "\\Market_Simulation\\Assets\\Scripts",
+    "\\Market_Simulation\\Assets\\Scripts\\GOAP"
   ],
-  "SelectedNode": "\\Market_Simulation.sln",
+  "SelectedNode": "\\Market_Simulation\\Assets",
   "PreviewInSolutionExplorer": false
 }

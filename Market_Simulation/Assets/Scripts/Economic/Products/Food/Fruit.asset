@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e2dbe4e9045b54b86a9dbedefc5c6e, type: 3}
-  m_Name: BioSigns Config
+  m_Script: {fileID: 11500000, guid: 1e35d11bbbda84542858c675caebf1ea, type: 3}
+  m_Name: Fruit
   m_EditorClassIdentifier: 
-  HungerDepletionRate: 0.25
-  MaxHunger: 20
-  AcceptableHungerLimit: 10
+  Quality: 2
+  Price: 10
+  Nutrition: 10
+  UniqueID: 0
