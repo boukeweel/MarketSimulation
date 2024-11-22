@@ -322,9 +322,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1431013662}
   - component: {fileID: 1431013661}
+  - component: {fileID: 1431013663}
   - component: {fileID: 1431013660}
   - component: {fileID: 1431013659}
-  - component: {fileID: 1431013663}
+  - component: {fileID: 1431013665}
+  - component: {fileID: 1431013664}
   m_Layer: 0
   m_Name: TestPerson
   m_TagString: Untagged
@@ -358,7 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _money: 2000
+  FoodStore: {fileID: 975074707}
+  PrefferdFoodQuality: 1
 --- !u!114 &1431013661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,12 +384,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431013658}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6901965, y: -1.7186813, z: 0.0006669932}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1843152061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1431013663
 MonoBehaviour:
@@ -401,6 +404,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goapRunner: {fileID: 1843152062}
+--- !u!114 &1431013664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431013658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc5fd00242f41c4187a5ce9475b0c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savings: 2000
+--- !u!114 &1431013665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431013658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItems: []
 --- !u!1 &1843152059
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +441,7 @@ GameObject:
   - component: {fileID: 1843152061}
   - component: {fileID: 1843152060}
   - component: {fileID: 1843152062}
+  - component: {fileID: 1843152063}
   m_Layer: 0
   m_Name: Goap config
   m_TagString: Untagged
@@ -443,7 +473,8 @@ Transform:
   m_LocalPosition: {x: 2.6901965, y: -1.7186813, z: 0.0006669932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1431013662}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843152062
@@ -462,6 +493,19 @@ MonoBehaviour:
   setConfigFactories: []
   goapSetConfigFactories:
   - {fileID: 1843152060}
+--- !u!114 &1843152063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843152059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a52130b84c61a42b1571cbbb635d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -470,4 +514,3 @@ SceneRoots:
   - {fileID: 849597869}
   - {fileID: 1843152061}
   - {fileID: 975074708}
-  - {fileID: 1431013662}

@@ -7,10 +7,15 @@ using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Resolver;
 using UnityEngine;
 
+
+[RequireComponent(typeof(DependencyInjector))]
 public class GoapSetConfigFactory : GoapSetFactoryBase
 {
+
+    private DependencyInjector Injector;
     public override IGoapSetConfig Create()
     {
+        Injector = GetComponent<DependencyInjector>();
         GoapSetBuilder builder = new("Person");
 
         BuildGoals(builder);
@@ -23,19 +28,25 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
     private void BuildGoals(GoapSetBuilder builder)
     {
         builder.AddGoal<EatGoal>()
-            .AddCondition<Hunger>(Comparison.SmallerThanOrEqual, 0);
+            .AddCondition<Hunger>(Comparison.SmallerThanOrEqual, Injector.BioSign.AcceptableHungerLimit);
     }
 
     private void BuildAction(GoapSetBuilder builder)
     {
         builder.AddAction<EatAction>()
             .AddEffect<Hunger>(EffectType.Decrease)
-            .SetBaseCost(8);
+            .AddCondition<HasFood>(Comparison.GreaterThan, 0)
+            .SetBaseCost(5);
+        builder.AddAction<BuyFood>()
+            .AddEffect<HasFood>(EffectType.Increase)
+            .SetBaseCost(5);
     }
 
     private void BuildSensors(GoapSetBuilder builder)
     {
         builder.AddWorldSensor<HungerSensor>()
             .SetKey<Hunger>();
+        builder.AddWorldSensor<HasFoodSensor>()
+            .SetKey<HasFood>();
     }
 }

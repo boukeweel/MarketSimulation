@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using CrashKonijn.Goap.Behaviours;
 using UnityEngine;
+using CrashKonijn.Goap.Behaviours;
 
-public class Hunger : WorldKeyBase { }
+public class HasFood : WorldKeyBase { }

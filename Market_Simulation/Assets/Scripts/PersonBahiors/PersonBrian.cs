@@ -10,7 +10,9 @@ public class PersonBrian : MonoBehaviour
     private BioSignSO _biosign;
     private AgentBehaviour _agentBehaviour;
 
-    [SerializeField] private int _money;
+    //bad
+    public Store_Food FoodStore;
+    public int PrefferdFoodQuality = 1;
 
     void Awake()
     {
@@ -22,24 +24,9 @@ public class PersonBrian : MonoBehaviour
 
     private void Update()
     {
-        if (_hunger.Hunger > _biosign.MaxHunger)
+        if (_hunger.Hunger >= _biosign.MaxHunger)
         {
             _agentBehaviour.SetGoal<EatGoal>(true);
         }
-    }
-
-    public bool AllowedToBuyProduct(int cost)
-    {
-        return cost < _money;
-    }
-
-    public void SpendMoney(int cost)
-    {
-        _money -= cost;
-    }
-
-    public void GetMoney(int amount)
-    {
-        _money += amount;
     }
 }

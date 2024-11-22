@@ -97,5 +97,13 @@ public class Store_Food : MonoBehaviour
                 }
             }
         }
+
+        // If not found, add a new FoodData entry to the list
+        FoodData newFoodData = new FoodData
+        {
+            foodType = foodType,
+            AvailableAmount = quantityToAdd
+        };
+        FoodTypes.Add(newFoodData);
     }
 }

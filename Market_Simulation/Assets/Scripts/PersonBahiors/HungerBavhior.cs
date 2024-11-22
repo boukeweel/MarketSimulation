@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class HungerBavhior : MonoBehaviour
 {
-    [field: SerializeField] public float Hunger { get;  set; }
+    [field: SerializeField] public float Hunger { get; set; }
     public BioSignSO BioSign;
 
-    private int _PrivouslyBoughtQuality = 1;
-
-    public Store_Food foodStore;
 
     void Awake()
     {
@@ -20,4 +17,5 @@ public class HungerBavhior : MonoBehaviour
     {
         Hunger += Time.deltaTime * BioSign.HungerDepletionRate;
     }
+
 }

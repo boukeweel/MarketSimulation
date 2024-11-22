@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Quality: 1
   Price: 5
-  Nutrition: 5
-  UniqueID: 0
+  Nutrition: 10
+  UniqueID: 1

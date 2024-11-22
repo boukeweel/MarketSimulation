@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Classes;
@@ -7,47 +7,45 @@ using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Interfaces;
 using UnityEngine;
 
-public class EatAction : ActionBase<EatAction.Data>
+public class BuyFood : ActionBase<BuyFood.Data>
 {
-
     public override void Created()
-    {
-    }
+    { }
 
     public override void Start(IMonoAgent agent, Data data)
-    {
-        data.Hunger.enabled = false;
-    }
+    { }
 
     public override ActionRunState Perform(IMonoAgent agent, Data data, ActionContext context)
     {
-        if (data.Hunger.Hunger <= data.Hunger.BioSign.AcceptableHungerLimit)
+        if (data.Inventory.GetTotalFoodAmount() >= 2)
         {
             return ActionRunState.Stop;
         }
 
-        if (data.Inventory.GetTotalFoodAmount() > 0)
+        int foodindex = data.Brain.FoodStore.FindFoodToBuy(data.wallet.Savings, data.Brain.PrefferdFoodQuality);
+        if (foodindex != -1)
         {
-            data.Hunger.Hunger -= data.Inventory.RemoveFood().Nutrition;
-        }
-        else
-        {
-            return ActionRunState.Stop;
+            FoodTypeSO foodType = data.Brain.FoodStore.BuyFood(foodindex);
+            data.Inventory.AddFood(foodType);
+            data.wallet.SpendMoney(foodType.Price);
+            data.Brain.PrefferdFoodQuality = foodType.Quality;
         }
 
         return ActionRunState.Continue;
     }
 
     public override void End(IMonoAgent agent, Data data)
-    {
-        data.Hunger.enabled = true;
-    }
+    { }
 
     public class Data : CommonData
     {
         [GetComponent]
-        public HungerBavhior Hunger { get; set; }
+        public PersonBrian Brain { get; set; }
+
         [GetComponent]
         public Inventory Inventory { get; set; }
+
+        [GetComponent]
+        public Wallet wallet { get; set; }
     }
 }

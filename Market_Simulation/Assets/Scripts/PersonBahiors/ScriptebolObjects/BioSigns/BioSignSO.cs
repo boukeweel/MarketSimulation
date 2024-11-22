@@ -8,5 +8,5 @@ public class BioSignSO : ScriptableObject
 {
     public float HungerDepletionRate = 0.25f;
     public float MaxHunger = 20f;
-    public float AcceptableHungerLimit = 10f;
+    public int AcceptableHungerLimit = 10;
 }

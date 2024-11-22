@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class DependencyInjector : GoapConfigInitializerBase, IGoapInjector
 {
+    public BioSignSO BioSign;
+
     public override void InitConfig(GoapConfig config)
     {
         config.GoapInjector = this;
