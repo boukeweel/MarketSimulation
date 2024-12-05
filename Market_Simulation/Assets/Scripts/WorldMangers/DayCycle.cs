@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DayCycle : MonoBehaviour
 {
-    [SerializeField] private int _hours = 0;
-    [SerializeField] private int _days = 0;
-    [SerializeField] private int _months = 0;
-    [SerializeField] private int _years = 0;
+    public int Hours = 0;
+    public int Days = 0;
+    public int Weeks = 0;
+    public int Months = 0;
+    public int Years = 0;
+
+    [Header("Events")]
+    public UnityEvent DayPassed = new UnityEvent();
+    public UnityEvent WeekPassed = new UnityEvent();
+    public UnityEvent MonthPassed = new UnityEvent();
+    public UnityEvent YearPassed = new UnityEvent();
 
     private const int HoursInDay = 24;
 
-    public float SecForDay = 600;
+    //minutes in real day is 1440 / 12 = 120
+    private const float _secForDay = 120;
     private void Start()
     {
         StartCoroutine(TimerCoroutine());
@@ -20,7 +29,7 @@ public class DayCycle : MonoBehaviour
 
     private IEnumerator TimerCoroutine()
     {
-        float realTimeHours = SecForDay / HoursInDay;
+        float realTimeHours = _secForDay / HoursInDay;
 
         while (true)
         {
@@ -35,27 +44,37 @@ public class DayCycle : MonoBehaviour
 
     void AddHour()
     {
-        _hours++;
-        if (_hours >= 24)
+        Hours++;
+        if (Hours >= 24)
         {
-            _hours = 0;
+            Hours = 0;
         }
     }
 
     void AddDay()
     {
-        _days++;
+        Days++;
+        DayPassed.Invoke();
 
-        if (_days > 30 )
+        if (Days == 7)
         {
-            _days = 1;
-            _months++;
+            Days = 0;
+            Weeks++;
+            WeekPassed.Invoke();
         }
 
-        if (_months > 12)
+        if (Weeks == 4 )
         {
-            _months = 1;
-            _years++;
+            Weeks = 0;
+            Months++;
+            MonthPassed.Invoke();
+        }
+
+        if (Months > 12)
+        {
+            Months = 1;
+            Years++;
+            YearPassed.Invoke();
         }
     }
 }

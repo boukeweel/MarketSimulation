@@ -10,18 +10,18 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < foodItems.Count; i++)
         {
-            if (foodItems[i].foodType.UniqueID == foodType.UniqueID)
+            if (foodItems[i].ProductType.UniqueID == foodType.UniqueID)
             {
                 // Update the quantity
-                FoodData updatedFoodData = foodItems[i];
-                updatedFoodData.AvailableAmount++;
-                foodItems[i] = updatedFoodData;
+                FoodData updatedProductData = foodItems[i];
+                updatedProductData.AvailableAmount++;
+                foodItems[i] = updatedProductData;
                 return;
             }
         }
 
         // If food type does not exist, add a new entry
-        foodItems.Add(new FoodData { foodType = foodType, AvailableAmount = 1 });
+        foodItems.Add(new FoodData { ProductType = foodType, AvailableAmount = 1 });
     }
 
     public FoodTypeSO RemoveFood()
@@ -31,12 +31,12 @@ public class Inventory : MonoBehaviour
             if (foodItems[i].AvailableAmount > 0)
             {
                 // Deduct the amount
-                FoodData updatedFoodData = foodItems[i];
-                updatedFoodData.AvailableAmount--;
-                foodItems[i] = updatedFoodData;
+                FoodData updatedProductData = foodItems[i];
+                updatedProductData.AvailableAmount--;
+                foodItems[i] = updatedProductData;
 
                 // Return the FoodTypeSO
-                return updatedFoodData.foodType;
+                return updatedProductData.FoodType;
             }
         }
 
@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
         int foodID = foodType.UniqueID;
         foreach (var food in foodItems)
         {
-            if (food.foodType.UniqueID == foodID)
+            if (food.ProductType.UniqueID == foodID)
             {
                 return food.AvailableAmount;
             }

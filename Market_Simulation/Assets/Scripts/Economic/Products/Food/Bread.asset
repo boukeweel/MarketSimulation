@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e35d11bbbda84542858c675caebf1ea, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
+  ProductName: Bread
+  UniqueID: 1
   Quality: 1
   Price: 5
   Nutrition: 10
-  UniqueID: 1

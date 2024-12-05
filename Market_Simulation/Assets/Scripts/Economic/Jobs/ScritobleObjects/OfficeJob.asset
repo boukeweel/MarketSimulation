@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OfficeJob
   m_EditorClassIdentifier: 
   Salary: 2000
-  WorkHours: 8
-  StartingHour: 9
-  EndingHour: 17
+  StartingHours: 9
+  EndingHours: 17
+  Product: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}

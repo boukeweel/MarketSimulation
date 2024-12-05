@@ -4,26 +4,33 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-[Serializable]
-public struct FoodData
-{
-    public FoodTypeSO foodType;
-    public int AvailableAmount;
-}
 
-public class Store_Food : MonoBehaviour
+public class Store_Food : Base_Establishment
 {
+    [Space(20)]
     public List<FoodData> FoodTypes;
 
-    public int FindFoodToBuy(int budget, int preferredQuality)
+    void Awake()
+    {
+        ProductType = ProductType.Food;
+        TypeEstablishment = TypeEstablishment.Store;
+    }
+
+    void Start()
+    {
+        MainManger.instance.EstablishmentHolder.StoreFoodEstablishments.Add(this);
+    }
+
+    //for Person
+    public int FindFoodToBuyPerson(int budget, int preferredQuality)
     {
         bool preferredQualityFound = false;
         //step 1 check for food with perfferedQuality
         for (int i = 0; i < FoodTypes.Count; i++)
         {
-            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].foodType.Quality == preferredQuality)
+            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality == preferredQuality)
             {
-                if (FoodTypes[i].foodType.Price <= budget)
+                if (FoodTypes[i].FoodType.ShopSellPrice <= budget)
                 {
                     return i;
                 }
@@ -39,7 +46,7 @@ public class Store_Food : MonoBehaviour
         {
             for (int i = 0; i < FoodTypes.Count; i++)
             {
-                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].foodType.Quality > preferredQuality && FoodTypes[i].foodType.Price <= budget)
+                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality > preferredQuality && FoodTypes[i].FoodType.ShopSellPrice <= budget)
                 {
                     return i;
                 }
@@ -49,13 +56,12 @@ public class Store_Food : MonoBehaviour
         // Step 3: If no preferred or higher quality food found, check lower quality foods
         return CheckLowerQualityFoods(budget, preferredQuality);
     }
-
     // Helper function to check for lower quality foods
     private int CheckLowerQualityFoods(int budget,int preferredQuality)
     {
         for (int i = 0; i < FoodTypes.Count; i++)
         {
-            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].foodType.Quality < preferredQuality && FoodTypes[i].foodType.Price <= budget)
+            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality < preferredQuality && FoodTypes[i].FoodType.ShopSellPrice <= budget)
             {
                 return i;
             }
@@ -64,8 +70,8 @@ public class Store_Food : MonoBehaviour
         // If no food is found in any category, return -1 to indicate no available food
         return -1;
     }
-
-    public FoodTypeSO BuyFood(int foodIndex)
+    //for people
+    public FoodTypeSO BuyFoodPerson(int foodIndex)
     {
         if (foodIndex >= 0 && foodIndex < FoodTypes.Count)
         {
@@ -75,12 +81,14 @@ public class Store_Food : MonoBehaviour
             {
                 foodData.AvailableAmount--;
                 FoodTypes[foodIndex] = foodData;
-
-                return foodData.foodType;
+                _money += foodData.FoodType.ShopSellPrice;
+                return foodData.FoodType;
             }
         }
         return null;
     }
+
+
 
     public void AddFood(FoodTypeSO foodType, int quantityToAdd)
     {
@@ -88,7 +96,7 @@ public class Store_Food : MonoBehaviour
         {
             for (int i = 0; i < FoodTypes.Count; i++)
             {
-                if (FoodTypes[i].foodType.UniqueID == foodType.UniqueID) // Compare UniqueID (int)
+                if (FoodTypes[i].FoodType.UniqueID == foodType.UniqueID) // Compare UniqueID (int)
                 {
                     FoodData foodData = FoodTypes[i];
                     foodData.AvailableAmount += quantityToAdd;
@@ -99,11 +107,8 @@ public class Store_Food : MonoBehaviour
         }
 
         // If not found, add a new FoodData entry to the list
-        FoodData newFoodData = new FoodData
-        {
-            foodType = foodType,
-            AvailableAmount = quantityToAdd
-        };
+        FoodData newFoodData = new FoodData{};
+        newFoodData.FoodType = foodType;
         FoodTypes.Add(newFoodData);
     }
 }

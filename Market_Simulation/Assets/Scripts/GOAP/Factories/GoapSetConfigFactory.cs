@@ -29,6 +29,8 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
     {
         builder.AddGoal<EatGoal>()
             .AddCondition<Hunger>(Comparison.SmallerThanOrEqual, Injector.BioSign.AcceptableHungerLimit);
+        builder.AddGoal<WorkGoal>()
+            .AddCondition<NeedsToWork>(Comparison.SmallerThanOrEqual, 0);
     }
 
     private void BuildAction(GoapSetBuilder builder)
@@ -40,6 +42,9 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
         builder.AddAction<BuyFood>()
             .AddEffect<HasFood>(EffectType.Increase)
             .SetBaseCost(5);
+        builder.AddAction<WorkAction>()
+            .AddEffect<NeedsToWork>(EffectType.Decrease)
+            .SetBaseCost(2);
     }
 
     private void BuildSensors(GoapSetBuilder builder)
@@ -48,5 +53,7 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
             .SetKey<Hunger>();
         builder.AddWorldSensor<HasFoodSensor>()
             .SetKey<HasFood>();
+        builder.AddWorldSensor<WorkSensor>()
+            .SetKey<NeedsToWork>();
     }
 }

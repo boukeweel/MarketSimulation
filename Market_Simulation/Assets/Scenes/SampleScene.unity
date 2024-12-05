@@ -223,7 +223,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849597869}
+  - component: {fileID: 849597870}
   - component: {fileID: 849597868}
+  - component: {fileID: 849597871}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -243,11 +245,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2134e06708d2b1340970b25128ae27ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hours: 0
-  _days: 0
-  _months: 0
-  _years: 0
-  SecForDay: 60
+  Hours: 8
+  Days: 0
+  Weeks: 0
+  Months: 0
+  Years: 0
+  DayPassed:
+    m_PersistentCalls:
+      m_Calls: []
+  WeekPassed:
+    m_PersistentCalls:
+      m_Calls: []
+  MonthPassed:
+    m_PersistentCalls:
+      m_Calls: []
+  YearPassed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &849597869
 Transform:
   m_ObjectHideFlags: 0
@@ -263,6 +277,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849597870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849597867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e390806b759a1d64ab5680fbaa0ac817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayCycle: {fileID: 0}
+  EstablishmentHolder: {fileID: 0}
+--- !u!114 &849597871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849597867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9873d8f35377b524dbda67f03071cfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FactoryFoodEstablishments: []
+  FactoryLuxuryEstablishments: []
+  StoreFoodEstablishments: []
+  StoreLuxuryEstablishments: []
 --- !u!1 &975074706
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,10 +336,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d879767a54df24ca86bc59527e1d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProductType: 0
+  TypeEstablishment: 1
+  _money: 10000
   FoodTypes:
-  - foodType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
+  - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 10
-  - foodType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
+  - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 10
 --- !u!4 &975074708
 Transform:
@@ -327,6 +374,7 @@ GameObject:
   - component: {fileID: 1431013659}
   - component: {fileID: 1431013665}
   - component: {fileID: 1431013664}
+  - component: {fileID: 1431013666}
   m_Layer: 0
   m_Name: TestPerson
   m_TagString: Untagged
@@ -360,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentJob: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
   FoodStore: {fileID: 975074707}
   PrefferdFoodQuality: 1
 --- !u!114 &1431013661
@@ -429,7 +478,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodItems: []
+--- !u!114 &1431013666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431013658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c38bf7245c13bb4aac0d6ca5f71c771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentWork: {fileID: 0}
+  Salary: 0
+--- !u!1 &1433537548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433537550}
+  - component: {fileID: 1433537551}
+  m_Layer: 0
+  m_Name: Work_Bread
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433537550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433537548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433537551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433537548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74041d4a2b67bbb4fa41ccaab0608273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProductType: 0
+  TypeEstablishment: 0
+  _money: 10000
+  Jobs:
+    job: {fileID: 0}
+    AvailableAmount: 0
+  _employList: []
+  _BaseSalary: 2000
+  Product:
+    ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
+    AvailableAmount: 0
 --- !u!1 &1843152059
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,3 +631,4 @@ SceneRoots:
   - {fileID: 849597869}
   - {fileID: 1843152061}
   - {fileID: 975074708}
+  - {fileID: 1433537550}
