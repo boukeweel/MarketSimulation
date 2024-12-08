@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Fruit
   m_EditorClassIdentifier: 
   ProductName: Fruit
+  ShopSellPrice: 20
+  ShopBuyPrice: 16
   UniqueID: 1
   Quality: 2
-  Price: 10
   Nutrition: 12

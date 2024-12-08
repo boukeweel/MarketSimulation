@@ -10,6 +10,8 @@ public class Store_Food : Base_Establishment
     [Space(20)]
     public List<FoodData> FoodTypes;
 
+    private int MaxAmountOfOneFoodType = 15;
+
     void Awake()
     {
         ProductType = ProductType.Food;
@@ -21,7 +23,6 @@ public class Store_Food : Base_Establishment
         MainManger.instance.EstablishmentHolder.StoreFoodEstablishments.Add(this);
     }
 
-    //for Person
     public int FindFoodToBuyPerson(int budget, int preferredQuality)
     {
         bool preferredQualityFound = false;
@@ -70,7 +71,6 @@ public class Store_Food : Base_Establishment
         // If no food is found in any category, return -1 to indicate no available food
         return -1;
     }
-    //for people
     public FoodTypeSO BuyFoodPerson(int foodIndex)
     {
         if (foodIndex >= 0 && foodIndex < FoodTypes.Count)
@@ -88,27 +88,37 @@ public class Store_Food : Base_Establishment
         return null;
     }
 
-
-
-    public void AddFood(FoodTypeSO foodType, int quantityToAdd)
+    public bool WantedToBuyFood(FoodTypeSO type)
     {
-        if (quantityToAdd > 0)
+        if (type.ShopBuyPrice > _money) return false;
+
+        foreach (FoodData foodData in FoodTypes)
         {
-            for (int i = 0; i < FoodTypes.Count; i++)
+            if (foodData.FoodType.UniqueID == type.UniqueID)
             {
-                if (FoodTypes[i].FoodType.UniqueID == foodType.UniqueID) // Compare UniqueID (int)
-                {
-                    FoodData foodData = FoodTypes[i];
-                    foodData.AvailableAmount += quantityToAdd;
-                    FoodTypes[i] = foodData;
-                    return;
-                }
+                if (foodData.AvailableAmount >= MaxAmountOfOneFoodType) return false;
+            }
+        }
+        return true;
+    }
+    public void BuyOneProduct(FoodTypeSO foodType)
+    {
+        for (int i = 0; i < FoodTypes.Count; i++)
+        {
+            if (FoodTypes[i].FoodType.UniqueID == foodType.UniqueID)
+            {
+                FoodData foodData = FoodTypes[i];
+                foodData.AvailableAmount++;
+                FoodTypes[i] = foodData;
+                _money -= foodData.ProductType.ShopBuyPrice;
+                return;
             }
         }
 
-        // If not found, add a new FoodData entry to the list
-        FoodData newFoodData = new FoodData{};
+        FoodData newFoodData = new FoodData { };
         newFoodData.FoodType = foodType;
+        newFoodData.AvailableAmount++;
+        _money -= newFoodData.ProductType.ShopBuyPrice;
         FoodTypes.Add(newFoodData);
     }
 }

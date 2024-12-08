@@ -8,9 +8,12 @@ public class Base_Factory : Base_Establishment
 {
     [Space(20)]
     public AvailableJobs Jobs;
-    [SerializeField] private List<Emploment> _employList = new List<Emploment>();
+    [SerializeField] protected List<Emploment> _employList = new List<Emploment>();
 
-    [SerializeField] private int _BaseSalary = 2000;
+    [SerializeField] protected int _BaseSalary = 2000;
+
+    [SerializeField] protected int _Income;
+    [SerializeField] protected int _Outcome;
 
     protected virtual void Start()
     {

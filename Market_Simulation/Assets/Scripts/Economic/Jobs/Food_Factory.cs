@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Food_Factory : Base_Factory
 {
@@ -17,6 +18,7 @@ public class Food_Factory : Base_Factory
     {
         base.Start();
         MainManger.instance.EstablishmentHolder.FactoryFoodEstablishments.Add(this);
+        MainManger.instance.DayCycle.DayPassed.AddListener(SellProducts);
     }
 
     public void ProductCreated()
@@ -24,8 +26,24 @@ public class Food_Factory : Base_Factory
         Product.AvailableAmount++;
     }
 
-    public void SellProducts()
+    private void SellProducts()
     {
         if (Product.AvailableAmount <= 0) return;
+
+        foreach (Store_Food store in MainManger.instance.EstablishmentHolder.StoreFoodEstablishments)
+        {
+            while (Product.AvailableAmount > 0)
+            {
+                if (!store.WantedToBuyFood(Product.FoodType)) break;
+
+                store.BuyOneProduct(Product.FoodType);
+                _money += Product.FoodType.ShopBuyPrice;
+                Product.AvailableAmount--;
+
+                Debug.Log("Sold Product");
+            }
+
+            if (Product.AvailableAmount <= 0) break;
+        }
     }
 }

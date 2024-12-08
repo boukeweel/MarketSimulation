@@ -38,7 +38,6 @@ public class DayCycle : MonoBehaviour
                 yield return new WaitForSeconds(realTimeHours);
                 AddHour();
             }
-            AddDay();
         }
     }
 
@@ -47,6 +46,7 @@ public class DayCycle : MonoBehaviour
         Hours++;
         if (Hours >= 24)
         {
+            AddDay();
             Hours = 0;
         }
     }
