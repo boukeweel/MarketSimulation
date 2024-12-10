@@ -15,6 +15,8 @@ public class Base_Factory : Base_Establishment
     [SerializeField] protected int _Income;
     [SerializeField] protected int _Outcome;
 
+    [SerializeField] private int ProfitAmountTillNewHire = 500;
+
     protected virtual void Start()
     {
         MainManger.instance.DayCycle.MonthPassed.AddListener(PayEmploys);
@@ -27,31 +29,43 @@ public class Base_Factory : Base_Establishment
         {
             employ.GettingPaid();
             _money -= employ.Salary;
+            _Outcome -= employ.Salary;
+        }
+    }
+
+    public void CheckForProfit()
+    {
+        int profit = _Income - _Outcome;
+
+        if (profit > 0)
+        {
+            Jobs.AvailableAmount--;
+
+            if (Jobs.AvailableAmount < _employList.Count)
+            {
+                FireEmploy();
+            }
         }
 
-        if (_money < 0)
-            FireEmploy();
+        if (profit < ProfitAmountTillNewHire)
+        {
+            Jobs.AvailableAmount++;
+        }
     }
+
+
     public void HireEmploy(Emploment employ)
     {
         employ.Salary = _BaseSalary;
         employ.CurrentWork = this;
-        AddNewEmploy(employ);
-    }
-    public void FireEmploy()
-    {
-        RemoveEmploy(_employList[0]);
-        _employList[0].Salary = 0;
-        _employList[0].CurrentWork = null;
-    }
-    private void AddNewEmploy(Emploment employ)
-    {
+        employ.CurrentJob = Jobs.job;
         _employList.Add(employ);
         Jobs.AvailableAmount--;
     }
-    private void RemoveEmploy(Emploment employ)
+    public void FireEmploy()
     {
-        _employList.Remove(employ);
-        Jobs.AvailableAmount++;
+        _employList.Remove(_employList[0]);
+        _employList[0].Salary = 0;
+        _employList[0].CurrentWork = null;
     }
 }

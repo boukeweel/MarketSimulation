@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2134e06708d2b1340970b25128ae27ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hours: 23
+  Hours: 8
   Days: 0
   Weeks: 0
   Months: 0
@@ -408,7 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentJob: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
   FoodStore: {fileID: 975074707}
   PrefferdFoodQuality: 1
 --- !u!114 &1431013661
@@ -492,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWork: {fileID: 0}
   Salary: 0
+  CurrentJob: {fileID: 0}
 --- !u!1 &1433537548
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +546,7 @@ MonoBehaviour:
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
+  ProfitAmountTillNewHire: 500
   Product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 3

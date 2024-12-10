@@ -3,7 +3,4 @@ using System.Collections.Generic;
 using CrashKonijn.Goap.Behaviours;
 using UnityEngine;
 
-public class NeedsToWork : WorldKeyBase
-{
-    
-}
+public class NeedsToWork : WorldKeyBase { }

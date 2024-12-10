@@ -44,7 +44,11 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
             .SetBaseCost(5);
         builder.AddAction<WorkAction>()
             .AddEffect<NeedsToWork>(EffectType.Decrease)
-            .SetBaseCost(2);
+            .AddCondition<NeedsToGetWork>(Comparison.SmallerThanOrEqual, 0)
+            .SetBaseCost(5);
+        builder.AddAction<GetAJobAction>()
+            .AddEffect<NeedsToGetWork>(EffectType.Decrease)
+            .SetBaseCost(5);
     }
 
     private void BuildSensors(GoapSetBuilder builder)
@@ -55,5 +59,7 @@ public class GoapSetConfigFactory : GoapSetFactoryBase
             .SetKey<HasFood>();
         builder.AddWorldSensor<WorkSensor>()
             .SetKey<NeedsToWork>();
+        builder.AddWorldSensor<HasJobSensor>()
+            .SetKey<NeedsToGetWork>();
     }
 }

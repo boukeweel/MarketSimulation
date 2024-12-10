@@ -16,7 +16,7 @@ public class WorkAction : ActionBase<WorkAction.Data>
 
     public override ActionRunState Perform(IMonoAgent agent, Data data, ActionContext context)
     {
-        if (data._brain.InWorkHours() == 0)
+        if (data._Emploment.InWorkHours() == 0)
         {
             return ActionRunState.Stop;
         }
@@ -25,14 +25,12 @@ public class WorkAction : ActionBase<WorkAction.Data>
     }
 
     public override void End(IMonoAgent agent, Data data)
-    {
-        
-    }
+    { }
 
 
     public class Data : CommonData
     {
-        [GetComponent] 
-        public PersonBrian _brain { get; set; }
+        [GetComponent]
+        public Emploment _Emploment { get; set; }
     }
 }

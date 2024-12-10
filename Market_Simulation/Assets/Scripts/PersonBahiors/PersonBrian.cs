@@ -8,9 +8,9 @@ public class PersonBrian : MonoBehaviour
 {
     private HungerBavhior _hunger;
     private BioSignSO _biosign;
-    [SerializeField] private JobsOS _currentJob;
     private AgentBehaviour _agentBehaviour;
     private DayCycle _dayCycle;
+    private Emploment _emploment;
 
     //bad
     public Store_Food FoodStore;
@@ -20,6 +20,7 @@ public class PersonBrian : MonoBehaviour
     {
         _agentBehaviour = GetComponent<AgentBehaviour>();
         _hunger = GetComponent<HungerBavhior>();
+        _emploment = GetComponent<Emploment>();
         _biosign = _hunger.BioSign;
     }
 
@@ -29,23 +30,17 @@ public class PersonBrian : MonoBehaviour
     }
     private void Update()
     {
-        if (_currentJob != null)
+        
+        if (_emploment.InWorkHours() == 1)
         {
-            if (InWorkHours() == 1)
-            {
-                _agentBehaviour.SetGoal<WorkGoal>(true);
-            }
+            _agentBehaviour.SetGoal<WorkGoal>(true);
         }
+        
         if (_hunger.Hunger >= _biosign.MaxHunger)
         {
             _agentBehaviour.SetGoal<EatGoal>(true);
         }
     }
 
-    public int InWorkHours()
-    {
-        if (_dayCycle.Hours >= _currentJob.StartingHours && _dayCycle.Hours <= _currentJob.EndingHours)
-            return 1;
-        return 0;
-    }
+    
 }
