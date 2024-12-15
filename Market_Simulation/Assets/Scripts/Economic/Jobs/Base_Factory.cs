@@ -29,7 +29,7 @@ public class Base_Factory : Base_Establishment
         {
             employ.GettingPaid();
             _money -= employ.Salary;
-            _Outcome -= employ.Salary;
+            _Outcome += employ.Salary;
         }
     }
 

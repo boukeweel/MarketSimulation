@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e2dbe4e9045b54b86a9dbedefc5c6e, type: 3}
   m_Name: BioSigns Config
   m_EditorClassIdentifier: 
-  HungerDepletionRate: 0.25
+  HungerDepletionRate: 2.5
   MaxHunger: 20
   AcceptableHungerLimit: 10

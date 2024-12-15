@@ -13,15 +13,17 @@ public class DayCycle : MonoBehaviour
     public int Years = 0;
 
     [Header("Events")]
-    public UnityEvent DayPassed = new UnityEvent();
-    public UnityEvent WeekPassed = new UnityEvent();
-    public UnityEvent MonthPassed = new UnityEvent();
-    public UnityEvent YearPassed = new UnityEvent();
+    [HideInInspector] public UnityEvent HourPassed = new UnityEvent();
+    [HideInInspector] public UnityEvent DayPassed = new UnityEvent();
+    [HideInInspector] public UnityEvent WeekPassed = new UnityEvent();
+    [HideInInspector] public UnityEvent MonthPassed = new UnityEvent();
+    [HideInInspector] public UnityEvent YearPassed = new UnityEvent();
 
     private const int HoursInDay = 24;
 
     //minutes in real day is 1440 / 12 = 120
-    private const float _secForDay = 120;
+    [Header("default is 120")]
+    [SerializeField] private float _secForDay = 120;
     private void Start()
     {
         StartCoroutine(TimerCoroutine());
@@ -44,6 +46,7 @@ public class DayCycle : MonoBehaviour
     void AddHour()
     {
         Hours++;
+        HourPassed.Invoke();
         if (Hours >= 24)
         {
             AddDay();

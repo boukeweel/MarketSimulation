@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
                 // Deduct the amount
                 FoodData updatedProductData = foodItems[i];
                 updatedProductData.AvailableAmount--;
+                DataMangement.instance.Data_Products.RemoveProductFood(updatedProductData.FoodType.UniqueID);
                 foodItems[i] = updatedProductData;
 
                 // Return the FoodTypeSO

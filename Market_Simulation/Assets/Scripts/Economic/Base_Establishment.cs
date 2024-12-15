@@ -24,7 +24,7 @@ public class FoodData : ProductData
 [Serializable]
 public class LuxeryData : ProductData
 {
-    public Luxury FoodType
+    public Luxury LuxuryType
     {
         get => (Luxury)base.ProductType; 
         set => base.ProductType = value;    

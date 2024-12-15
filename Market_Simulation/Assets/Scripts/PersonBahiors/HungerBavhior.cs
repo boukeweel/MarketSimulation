@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HungerBavhior : MonoBehaviour
@@ -7,15 +8,19 @@ public class HungerBavhior : MonoBehaviour
     [field: SerializeField] public float Hunger { get; set; }
     public BioSignSO BioSign;
 
-
     void Awake()
     {
-        Hunger = Random.Range(0, BioSign.MaxHunger);
+        Hunger = Random.Range(0, 10);
     }
 
-    void Update()
+    void Start()
     {
-        Hunger += Time.deltaTime * BioSign.HungerDepletionRate;
+        MainManger.instance.DayCycle.HourPassed.AddListener(AddHunger);
+    }
+
+    private void AddHunger()
+    {
+        Hunger += BioSign.HungerDepletionRate;
     }
 
 }

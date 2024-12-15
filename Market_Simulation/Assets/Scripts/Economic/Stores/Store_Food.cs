@@ -10,7 +10,7 @@ public class Store_Food : Base_Establishment
     [Space(20)]
     public List<FoodData> FoodTypes;
 
-    private int MaxAmountOfOneFoodType = 15;
+    private int MaxAmountOfOneFoodType = 40;
 
     void Awake()
     {

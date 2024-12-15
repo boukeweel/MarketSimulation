@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Emploment : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Emploment : MonoBehaviour
 
     private Wallet _wallet;
     private DayCycle _dayCycle;
+
+    [HideInInspector]
+    public UnityEvent EndWorkDay = new UnityEvent();
 
     void Start()
     {
@@ -37,7 +41,11 @@ public class Emploment : MonoBehaviour
     public int InWorkHours()
     {
         if (_dayCycle.Hours >= StartingHours && _dayCycle.Hours <= EndingHours)
+        {
+            EndWorkDay.Invoke();
             return 1;
+        }
+           
 
         return 0;
     }

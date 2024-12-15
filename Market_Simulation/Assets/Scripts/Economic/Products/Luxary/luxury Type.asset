@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85aad053ecc13bf4da8d1b0fa888f457, type: 3}
-  m_Name: Watch
+  m_Name: luxury Type
   m_EditorClassIdentifier: 
+  UniqueID: 1
   ProductName: Watch
-  Price: 1000
-  UniqueID: 0
+  ShopSellPrice: 0
+  ShopBuyPrice: 0

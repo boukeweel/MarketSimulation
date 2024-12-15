@@ -22,13 +22,16 @@ public class BuyFood : ActionBase<BuyFood.Data>
             return ActionRunState.Stop;
         }
 
-        int foodindex = data.Brain.FoodStore.FindFoodToBuyPerson(data.wallet.Savings, data.Brain.PrefferdFoodQuality);
-        if (foodindex != -1)
+        foreach (Store_Food foodStore in MainManger.instance.EstablishmentHolder.StoreFoodEstablishments)
         {
-            FoodTypeSO foodType = data.Brain.FoodStore.BuyFoodPerson(foodindex);
-            data.Inventory.AddFood(foodType);
-            data.wallet.SpendMoney(foodType.ShopSellPrice);
-            data.Brain.PrefferdFoodQuality = foodType.Quality;
+            int foodindex = foodStore.FindFoodToBuyPerson(data.wallet.Savings, data.Brain.PrefferdFoodQuality);
+            if (foodindex != -1)
+            {
+                FoodTypeSO foodType = foodStore.BuyFoodPerson(foodindex);
+                data.Inventory.AddFood(foodType);
+                data.wallet.SpendMoney(foodType.ShopSellPrice);
+                data.Brain.PrefferdFoodQuality = foodType.Quality;
+            }
         }
 
         return ActionRunState.Continue;

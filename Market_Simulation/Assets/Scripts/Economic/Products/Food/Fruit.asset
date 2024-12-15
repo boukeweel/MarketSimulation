@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e35d11bbbda84542858c675caebf1ea, type: 3}
   m_Name: Fruit
   m_EditorClassIdentifier: 
+  UniqueID: 4
   ProductName: Fruit
   ShopSellPrice: 20
   ShopBuyPrice: 16
-  UniqueID: 1
   Quality: 2
   Nutrition: 12

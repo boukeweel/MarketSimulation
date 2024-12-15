@@ -9,11 +9,8 @@ public class PersonBrian : MonoBehaviour
     private HungerBavhior _hunger;
     private BioSignSO _biosign;
     private AgentBehaviour _agentBehaviour;
-    private DayCycle _dayCycle;
     private Emploment _emploment;
 
-    //bad
-    public Store_Food FoodStore;
     public int PrefferdFoodQuality = 1;
 
     void Awake()
@@ -26,7 +23,8 @@ public class PersonBrian : MonoBehaviour
 
     void Start()
     {
-        _dayCycle = MainManger.instance.DayCycle;
+        DataMangement.instance.Data_People.People.Add(this.gameObject);
+
     }
     private void Update()
     {

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class Food_Factory : Base_Factory
 {
-    [Header("the Product it creates")]
-    [SerializeField] private FoodData Product;
+    [Header("the _product it creates")]
+    [SerializeField] private FoodData _product;
 
     void Awake()
     {
@@ -21,29 +21,31 @@ public class Food_Factory : Base_Factory
         MainManger.instance.DayCycle.DayPassed.AddListener(SellProducts);
     }
 
-    public void ProductCreated()
+    public void ProductCreated(int Amount)
     {
-        Product.AvailableAmount++;
+        _product.AvailableAmount += Amount;
+        
+        DataMangement.instance.Data_Products.AddProductFood(_product.FoodType.UniqueID,Amount);
     }
 
     private void SellProducts()
     {
-        if (Product.AvailableAmount <= 0) return;
+        if (_product.AvailableAmount <= 0) return;
 
         foreach (Store_Food store in MainManger.instance.EstablishmentHolder.StoreFoodEstablishments)
         {
-            while (Product.AvailableAmount > 0)
+            while (_product.AvailableAmount > 0)
             {
-                if (!store.WantedToBuyFood(Product.FoodType)) break;
+                if (!store.WantedToBuyFood(_product.FoodType)) break;
 
-                store.BuyOneProduct(Product.FoodType);
-                int price = Product.FoodType.ShopBuyPrice;
+                store.BuyOneProduct(_product.FoodType);
+                int price = _product.FoodType.ShopBuyPrice;
                 _money += price;
                 _Income += price;
-                Product.AvailableAmount--;
+                _product.AvailableAmount--;
             }
 
-            if (Product.AvailableAmount <= 0) break;
+            if (_product.AvailableAmount <= 0) break;
         }
     }
 }
