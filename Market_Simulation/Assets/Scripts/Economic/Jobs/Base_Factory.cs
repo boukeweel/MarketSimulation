@@ -28,7 +28,7 @@ public class Base_Factory : Base_Establishment
         foreach (Emploment employ in _employList)
         {
             employ.GettingPaid();
-            _money -= employ.Salary;
+            Money -= employ.Salary;
             _Outcome += employ.Salary;
         }
     }

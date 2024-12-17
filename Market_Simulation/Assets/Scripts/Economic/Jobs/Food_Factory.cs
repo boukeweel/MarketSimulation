@@ -40,7 +40,7 @@ public class Food_Factory : Base_Factory
 
                 store.BuyOneProduct(_product.FoodType);
                 int price = _product.FoodType.ShopBuyPrice;
-                _money += price;
+                Money += price;
                 _Income += price;
                 _product.AvailableAmount--;
             }

@@ -175,6 +175,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &95367191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +310,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &173708471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +537,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &602863472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +631,7 @@ GameObject:
   - component: {fileID: 663432103}
   - component: {fileID: 663432101}
   - component: {fileID: 663432104}
+  - component: {fileID: 663432105}
   m_Layer: 0
   m_Name: DataCollection
   m_TagString: Untagged
@@ -691,6 +701,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   People: []
+  PeopleCount: 0
+  AveragesWealthsPeople: []
+  TotalWealthsPeople: []
+  AveragesWealthPeople: 0
+  TotalWealthPeople: 0
+--- !u!114 &663432105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663432100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e995a1036f01fd4aa0a5b3fc7d60ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalWealthsEstablishments: []
+  AveragesWealthsEstablishments: []
+  TotalWealthsFoodFactories: []
+  AveragesWealthsFoodFactories: []
+  TotalWealthsLuxuryFactories: []
+  AveragesWealthsLuxuryFactories: []
+  TotalWealthsFoodStores: []
+  AveragesWealthsFoodStores: []
+  TotalWealthsLuxuryStores: []
+  AveragesWealthsLuxuryStores: []
 --- !u!1 &781082606
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +781,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &781082609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,7 +914,7 @@ MonoBehaviour:
   YearPassed:
     m_PersistentCalls:
       m_Calls: []
-  _secForDay: 30
+  _secForDay: 10
 --- !u!4 &849597869
 Transform:
   m_ObjectHideFlags: 0
@@ -973,6 +1013,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &938907027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
-  _money: 10000
+  Money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 4
@@ -1157,6 +1200,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1020360129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
-  _money: 10000
+  Money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 3
@@ -1347,6 +1393,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1353757093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,6 +1607,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1433537548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
-  _money: 10000
+  Money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 5
@@ -1669,6 +1721,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1583039888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,6 +1856,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1627137891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +1991,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1628423663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,6 +2126,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1740242067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,6 +2261,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1758874844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2396,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1771090311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,6 +2531,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1776101291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2571,7 +2644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
-  _money: 10000
+  Money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 3
@@ -2629,7 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
-  _money: 10000
+  Money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 4
@@ -2794,6 +2867,9 @@ MonoBehaviour:
   CurrentWork: {fileID: 0}
   Salary: 0
   CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1893164168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2904,7 +2980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
-  _money: 10000
+  Money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 5
@@ -2962,7 +3038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
-  _money: 10000
+  Money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 4
@@ -2976,7 +3052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090124340}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3851237, y: -0.14505301, z: 0.028485287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -60,5 +60,5 @@ public class Base_Establishment : MonoBehaviour
     [HideInInspector] public TypeEstablishment TypeEstablishment;
 
     [Space(10)]
-    [SerializeField] protected int _money = 10000;
+    public int Money = 10000;
 }

@@ -81,7 +81,7 @@ public class Store_Food : Base_Establishment
             {
                 foodData.AvailableAmount--;
                 FoodTypes[foodIndex] = foodData;
-                _money += foodData.FoodType.ShopSellPrice;
+                Money += foodData.FoodType.ShopSellPrice;
                 return foodData.FoodType;
             }
         }
@@ -90,7 +90,7 @@ public class Store_Food : Base_Establishment
 
     public bool WantedToBuyFood(FoodTypeSO type)
     {
-        if (type.ShopBuyPrice > _money) return false;
+        if (type.ShopBuyPrice > Money) return false;
 
         foreach (FoodData foodData in FoodTypes)
         {
@@ -110,7 +110,7 @@ public class Store_Food : Base_Establishment
                 FoodData foodData = FoodTypes[i];
                 foodData.AvailableAmount++;
                 FoodTypes[i] = foodData;
-                _money -= foodData.ProductType.ShopBuyPrice;
+                Money -= foodData.ProductType.ShopBuyPrice;
                 return;
             }
         }
@@ -118,7 +118,7 @@ public class Store_Food : Base_Establishment
         FoodData newFoodData = new FoodData { };
         newFoodData.FoodType = foodType;
         newFoodData.AvailableAmount++;
-        _money -= newFoodData.ProductType.ShopBuyPrice;
+        Money -= newFoodData.ProductType.ShopBuyPrice;
         FoodTypes.Add(newFoodData);
     }
 }
