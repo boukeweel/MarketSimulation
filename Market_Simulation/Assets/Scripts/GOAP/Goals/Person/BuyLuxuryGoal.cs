@@ -4,4 +4,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EatGoal : GoalBase { }
+public class BuyLuxuryGoal : GoalBase
+{}

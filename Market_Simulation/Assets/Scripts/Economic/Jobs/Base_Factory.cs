@@ -31,6 +31,8 @@ public class Base_Factory : Base_Establishment
             Money -= employ.Salary;
             _Outcome += employ.Salary;
         }
+
+        CheckForProfit();
     }
 
     public void CheckForProfit()

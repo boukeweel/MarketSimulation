@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85aad053ecc13bf4da8d1b0fa888f457, type: 3}
-  m_Name: luxury Type
+  m_Script: {fileID: 11500000, guid: d8039769326ad2846b790f8d3da51de6, type: 3}
+  m_Name: BreadJob
   m_EditorClassIdentifier: 
-  UniqueID: 1
-  ProductName: Watch
-  ShopSellPrice: 0
-  ShopBuyPrice: 0
+  MaxProductsCreatedInDay: 8
+  MinProductsCreatedInDay: 4

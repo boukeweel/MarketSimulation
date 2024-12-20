@@ -7,6 +7,8 @@ public class Wallet : MonoBehaviour
     [SerializeField]
     private int savings = 2000;
 
+    public int MoneyForLuxuryItem;
+
     public int Savings
     {
         get => savings;
@@ -18,12 +20,18 @@ public class Wallet : MonoBehaviour
         if (savings >= amount)
         {
             savings -= amount;
+            UpdateLuxuryBudget();
             return true;
         }
         else
         {
             return false;
         }
+    }
+
+    private void UpdateLuxuryBudget()
+    {
+        MoneyForLuxuryItem = savings / 100;
     }
 
     public void AddMoney(int amount)
@@ -33,5 +41,6 @@ public class Wallet : MonoBehaviour
             return;
         }
         savings += amount;
+        UpdateLuxuryBudget();
     }
 }

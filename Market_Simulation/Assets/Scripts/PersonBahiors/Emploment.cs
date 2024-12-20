@@ -40,6 +40,7 @@ public class Emploment : MonoBehaviour
 
     public int InWorkHours()
     {
+
         if (_dayCycle.Hours >= StartingHours && _dayCycle.Hours <= EndingHours)
         {
             EndWorkDay.Invoke();

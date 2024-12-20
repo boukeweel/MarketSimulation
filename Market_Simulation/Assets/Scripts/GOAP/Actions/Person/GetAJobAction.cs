@@ -24,6 +24,15 @@ public class GetAJobAction : ActionBase<GetAJobAction.Data>
                     return ActionRunState.Stop;
                 }
             }
+
+            foreach (Luxury_Factory factory in MainManger.instance.EstablishmentHolder.FactoryLuxuryEstablishments)
+            {
+                if (factory.Jobs.AvailableAmount > 0)
+                {
+                    factory.HireEmploy(data._Emploment);
+                    return ActionRunState.Stop;
+                }
+            }
         }
 
         return ActionRunState.Continue;

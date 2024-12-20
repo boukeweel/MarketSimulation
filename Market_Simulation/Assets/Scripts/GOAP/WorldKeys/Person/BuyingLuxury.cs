@@ -3,5 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class EatGoal : GoalBase { }
+public class BuyingLuxury : WorldKeyBase
+{
+}

@@ -8,6 +8,9 @@ public class Food_Factory : Base_Factory
     [Header("the _product it creates")]
     [SerializeField] private FoodData _product;
 
+    [ReadOnly]
+    [SerializeField]private float _particalyCreatedProduct;
+
     void Awake()
     {
         ProductType = ProductType.Food;
@@ -21,11 +24,19 @@ public class Food_Factory : Base_Factory
         MainManger.instance.DayCycle.DayPassed.AddListener(SellProducts);
     }
 
-    public void ProductCreated(int Amount)
+    public void ProductCreated(float Amount)
     {
-        _product.AvailableAmount += Amount;
-        
-        DataMangement.instance.Data_Products.AddProductFood(_product.FoodType.UniqueID,Amount);
+        _particalyCreatedProduct += Amount;
+
+        int fullyCreatedProducts = Mathf.FloorToInt(_particalyCreatedProduct);
+
+        _particalyCreatedProduct -= fullyCreatedProducts;
+
+        if (fullyCreatedProducts > 0)
+        {
+            _product.AvailableAmount += fullyCreatedProducts;
+            DataMangement.instance.Data_Products.AddProductFood(_product.FoodType.UniqueID, fullyCreatedProducts);
+        }
     }
 
     private void SellProducts()

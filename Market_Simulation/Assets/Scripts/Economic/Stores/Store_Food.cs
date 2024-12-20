@@ -8,9 +8,9 @@ using UnityEngine;
 public class Store_Food : Base_Establishment
 {
     [Space(20)]
-    public List<FoodData> FoodTypes;
+    public List<FoodData> FoodTypes = new List<FoodData>();
 
-    private int MaxAmountOfOneFoodType = 40;
+    [SerializeField] private int MaxAmountOfOneFoodType = 40;
 
     void Awake()
     {

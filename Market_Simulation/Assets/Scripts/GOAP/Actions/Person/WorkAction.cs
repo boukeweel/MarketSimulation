@@ -31,7 +31,7 @@ public class WorkAction : ActionBase<WorkAction.Data>
     {
         if (_endWorkDay)
         {
-            int AmountProduct = Random.Range(data._Emploment.CurrentJob.MinProductsCreatedInDay, data._Emploment.CurrentJob.MaxProductsCreatedInDay);
+            float AmountProduct = Random.Range(data._Emploment.CurrentJob.MinProductsCreatedInDay, data._Emploment.CurrentJob.MaxProductsCreatedInDay);
 
             if (data._Emploment.CurrentWork.ProductType == ProductType.Food)
             {
