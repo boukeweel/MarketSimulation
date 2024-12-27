@@ -29,7 +29,9 @@ public class BuyLuxuryAction : ActionBase<BuyLuxuryAction.Data>
             {
                 Luxury LuxuryType = luxuryStore.BuyItemPerons(Itemindex);
                 data.Inventory.AddLuxury(LuxuryType);
-                data.wallet.SpendMoney(LuxuryType.ShopSellPrice);
+                float tax = LuxuryType.ShopSellPrice * Goverment.instance.FoodTax;
+                Goverment.instance.GetMoney(tax);
+                data.wallet.SpendMoney(LuxuryType.ShopSellPrice + tax);
             }
         }
 

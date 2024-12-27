@@ -23,15 +23,16 @@ public class Store_Food : Base_Establishment
         MainManger.instance.EstablishmentHolder.StoreFoodEstablishments.Add(this);
     }
 
-    public int FindFoodToBuyPerson(int budget, int preferredQuality)
+    public int FindFoodToBuyPerson(float budget, int preferredQuality)
     {
+        float tax = Goverment.instance.FoodTax;
         bool preferredQualityFound = false;
         //step 1 check for food with perfferedQuality
         for (int i = 0; i < FoodTypes.Count; i++)
         {
             if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality == preferredQuality)
             {
-                if (FoodTypes[i].FoodType.ShopSellPrice <= budget)
+                if (FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
                 {
                     return i;
                 }
@@ -47,7 +48,7 @@ public class Store_Food : Base_Establishment
         {
             for (int i = 0; i < FoodTypes.Count; i++)
             {
-                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality > preferredQuality && FoodTypes[i].FoodType.ShopSellPrice <= budget)
+                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality > preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
                 {
                     return i;
                 }
@@ -58,11 +59,12 @@ public class Store_Food : Base_Establishment
         return CheckLowerQualityFoods(budget, preferredQuality);
     }
     // Helper function to check for lower quality foods
-    private int CheckLowerQualityFoods(int budget,int preferredQuality)
+    private int CheckLowerQualityFoods(float budget,int preferredQuality)
     {
+        float tax = Goverment.instance.FoodTax;
         for (int i = 0; i < FoodTypes.Count; i++)
         {
-            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality < preferredQuality && FoodTypes[i].FoodType.ShopSellPrice <= budget)
+            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality < preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
             {
                 return i;
             }
@@ -103,6 +105,7 @@ public class Store_Food : Base_Establishment
     }
     public void BuyOneProduct(FoodTypeSO foodType)
     {
+        float tax = 0;
         for (int i = 0; i < FoodTypes.Count; i++)
         {
             if (FoodTypes[i].FoodType.UniqueID == foodType.UniqueID)
@@ -110,7 +113,9 @@ public class Store_Food : Base_Establishment
                 FoodData foodData = FoodTypes[i];
                 foodData.AvailableAmount++;
                 FoodTypes[i] = foodData;
-                Money -= foodData.ProductType.ShopBuyPrice;
+                tax = foodData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
+                Goverment.instance.GetMoney(tax);
+                Money -= foodData.ProductType.ShopBuyPrice + tax;
                 return;
             }
         }
@@ -119,6 +124,9 @@ public class Store_Food : Base_Establishment
         newFoodData.FoodType = foodType;
         newFoodData.AvailableAmount++;
         Money -= newFoodData.ProductType.ShopBuyPrice;
+        tax = newFoodData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
+        Goverment.instance.GetMoney(tax);
+        Money -= newFoodData.ProductType.ShopBuyPrice + tax;
         FoodTypes.Add(newFoodData);
     }
 }

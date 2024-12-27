@@ -12,8 +12,8 @@ public class Base_Factory : Base_Establishment
 
     [SerializeField] protected int _BaseSalary = 2000;
 
-    [SerializeField] protected int _Income;
-    [SerializeField] protected int _Outcome;
+    [SerializeField] protected float _Income;
+    [SerializeField] protected float _Outcome;
 
     [SerializeField] private int ProfitAmountTillNewHire = 500;
 
@@ -32,14 +32,25 @@ public class Base_Factory : Base_Establishment
             _Outcome += employ.Salary;
         }
 
+        if(Money < 0)
+            AskLoan(Money);
+
         CheckForProfit();
     }
 
-    public void CheckForProfit()
+    private void AskLoan(float MoneyNeed)
     {
-        int profit = _Income - _Outcome;
+        if (Goverment.instance.AllowedToHelp(MoneyNeed))
+        {
+            Money += Goverment.instance.GiveMoneySupport(MoneyNeed);
+        }
+    }
 
-        if (profit > 0)
+    private void CheckForProfit()
+    {
+        float profit = _Income - _Outcome;
+
+        if (profit < 0)
         {
             Jobs.AvailableAmount--;
 
@@ -49,7 +60,7 @@ public class Base_Factory : Base_Establishment
             }
         }
 
-        if (profit < ProfitAmountTillNewHire)
+        if (profit > ProfitAmountTillNewHire)
         {
             Jobs.AvailableAmount++;
         }

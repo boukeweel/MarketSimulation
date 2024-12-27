@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    [SerializeField]
-    private int savings = 2000;
+    public float MoneyForLuxuryItem;
 
-    public int MoneyForLuxuryItem;
+    private float money = 2000;
 
-    public int Savings
+    public float Money
     {
-        get => savings;
-        private set => savings = value;
+        get => money;
+        set => money = Mathf.Round(value * 100) / 100; // Ensures only two decimal places
     }
 
-    public bool SpendMoney(int amount)
+    public bool SpendMoney(float amount)
     {
-        if (savings >= amount)
+        if (Money >= amount)
         {
-            savings -= amount;
+            Money -= amount;
             UpdateLuxuryBudget();
             return true;
         }
@@ -31,7 +30,7 @@ public class Wallet : MonoBehaviour
 
     private void UpdateLuxuryBudget()
     {
-        MoneyForLuxuryItem = savings / 100;
+        MoneyForLuxuryItem = Money / 100;
     }
 
     public void AddMoney(int amount)
@@ -40,7 +39,7 @@ public class Wallet : MonoBehaviour
         {
             return;
         }
-        savings += amount;
+        Money += amount;
         UpdateLuxuryBudget();
     }
 }

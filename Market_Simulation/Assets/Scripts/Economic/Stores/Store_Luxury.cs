@@ -20,7 +20,7 @@ public class Store_Luxury : Base_Establishment
         MainManger.instance.EstablishmentHolder.StoreLuxuryEstablishments.Add(this);
     }
 
-    public int FindITemToBuyPerson(int budget)
+    public int FindITemToBuyPerson(float budget)
     {
         for (int i = 0; i < luxeryTypes.Count; i++)
         {
@@ -62,24 +62,29 @@ public class Store_Luxury : Base_Establishment
         }
         return true;
     }
-    public void BuyOneProduct(Luxury foodType)
+    public void BuyOneProduct(Luxury luxuryType)
     {
+        float tax = 0;
         for (int i = 0; i < luxeryTypes.Count; i++)
         {
-            if (luxeryTypes[i].LuxuryType.UniqueID == foodType.UniqueID)
+            if (luxeryTypes[i].LuxuryType.UniqueID == luxuryType.UniqueID)
             {
-                LuxeryData foodData = luxeryTypes[i];
-                foodData.AvailableAmount++;
-                luxeryTypes[i] = foodData;
-                Money -= foodData.ProductType.ShopBuyPrice;
+                LuxeryData luxuryData = luxeryTypes[i];
+                luxuryData.AvailableAmount++;
+                luxeryTypes[i] = luxuryData;
+                tax = luxuryData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
+                Goverment.instance.GetMoney(tax);
+                Money -= luxuryData.ProductType.ShopBuyPrice + tax;
                 return;
             }
         }
 
         LuxeryData newLuxeryData = new LuxeryData { };
-        newLuxeryData.LuxuryType = foodType;
+        newLuxeryData.LuxuryType = luxuryType;
         newLuxeryData.AvailableAmount++;
-        Money -= newLuxeryData.ProductType.ShopBuyPrice;
+        tax = newLuxeryData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
+        Goverment.instance.GetMoney(tax);
+        Money -= newLuxeryData.ProductType.ShopBuyPrice + tax;
         luxeryTypes.Add(newLuxeryData);
     }
 }

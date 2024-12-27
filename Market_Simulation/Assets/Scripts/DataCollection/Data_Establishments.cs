@@ -10,36 +10,36 @@ public class Data_Establishments : MonoBehaviour
     private int FoodStoreCount = 0;
     private int LuxuryStoreCount = 0;
 
-    private int TotalWealthEstablishments = 0;
-    private int AverageWealthEstablishments = 0;
+    private float TotalWealthEstablishments = 0;
+    private float AverageWealthEstablishments = 0;
 
     [Header("Total and Average Wealth for all Establishments")]
     public List<float> TotalWealthsEstablishments = new List<float>();
     public List<float> AveragesWealthsEstablishments = new List<float>();
 
-    private int TotalWealthFoodFactories = 0;
-    private int AverageWealthFoodFactories = 0;
+    private float TotalWealthFoodFactories = 0;
+    private float AverageWealthFoodFactories = 0;
 
     [Header("Total and Average Wealth for Food Factories")]
     public List<float> TotalWealthsFoodFactories = new List<float>();
     public List<float> AveragesWealthsFoodFactories = new List<float>();
     
-    private int TotalWealthLuxuryFactories = 0;
-    private int AverageWealthLuxuryFactories = 0;
+    private float TotalWealthLuxuryFactories = 0;
+    private float AverageWealthLuxuryFactories = 0;
 
     [Header("Total and Average Wealth for Luxury Factories")]
     public List<float> TotalWealthsLuxuryFactories = new List<float>();
     public List<float> AveragesWealthsLuxuryFactories = new List<float>();
 
-    private int TotalWealthFoodStores = 0;
-    private int AverageWealthFoodStores = 0;
+    private float TotalWealthFoodStores = 0;
+    private float AverageWealthFoodStores = 0;
 
     [Header("Total and Average Wealth for Food Stores")]
     public List<float> TotalWealthsFoodStores = new List<float>();
     public List<float> AveragesWealthsFoodStores = new List<float>();
 
-    private int TotalWealthLuxuryStores = 0;
-    private int AverageWealthLuxuryStores = 0;
+    private float TotalWealthLuxuryStores = 0;
+    private float AverageWealthLuxuryStores = 0;
 
     [Header("Total and Average Wealth for Luxury Stores")]
     public List<float> TotalWealthsLuxuryStores = new List<float>();

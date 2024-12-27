@@ -26,7 +26,7 @@ public class Data_People : MonoBehaviour
         TotalWealthPeople = 0;
         foreach (GameObject Person in People)
         {
-            TotalWealthPeople += Person.GetComponent<Wallet>().Savings;
+            TotalWealthPeople += Person.GetComponent<Wallet>().Money;
         }
         AveragesWealthPeople = TotalWealthPeople / PeopleCount;
 

@@ -24,12 +24,14 @@ public class BuyFood : ActionBase<BuyFood.Data>
 
         foreach (Store_Food foodStore in MainManger.instance.EstablishmentHolder.StoreFoodEstablishments)
         {
-            int foodindex = foodStore.FindFoodToBuyPerson(data.wallet.Savings, data.Brain.PrefferdFoodQuality);
+            int foodindex = foodStore.FindFoodToBuyPerson(data.wallet.Money, data.Brain.PrefferdFoodQuality);
             if (foodindex != -1)
             {
                 FoodTypeSO foodType = foodStore.BuyFoodPerson(foodindex);
                 data.Inventory.AddFood(foodType);
-                data.wallet.SpendMoney(foodType.ShopSellPrice);
+                float tax = foodType.ShopSellPrice * Goverment.instance.FoodTax;
+                Goverment.instance.GetMoney(tax);
+                data.wallet.SpendMoney(foodType.ShopSellPrice + tax);
                 data.Brain.PrefferdFoodQuality = foodType.Quality;
             }
         }

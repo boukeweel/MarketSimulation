@@ -59,6 +59,11 @@ public class Base_Establishment : MonoBehaviour
     //If the establishment is makes products or sells them to people
     [HideInInspector] public TypeEstablishment TypeEstablishment;
 
-    [Space(10)]
-    public int Money = 10000;
+    [Space(10)] private float money = 10000;
+
+    public float Money
+    {
+        get => money;
+        set => money = Mathf.Round(value * 100) / 100; // Ensures only two decimal places
+    }
 }
