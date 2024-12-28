@@ -27,6 +27,14 @@ public class DayCycle : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TimerCoroutine());
+        YearPassed.AddListener(OneYear);
+    }
+
+    private void OneYear()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     private IEnumerator TimerCoroutine()
@@ -73,7 +81,7 @@ public class DayCycle : MonoBehaviour
             MonthPassed.Invoke();
         }
 
-        if (Months > 12)
+        if (Months == 12)
         {
             Months = 1;
             Years++;

@@ -32,8 +32,13 @@ public class Base_Factory : Base_Establishment
             _Outcome += employ.Salary;
         }
 
-        if(Money < 0)
-            AskLoan(Money);
+        if (Money < 0)
+        {
+            float needed = -Money;
+            Debug.LogWarning(needed);
+            AskLoan(needed);
+        }
+           
 
         CheckForProfit();
     }
@@ -52,8 +57,6 @@ public class Base_Factory : Base_Establishment
 
         if (profit < 0)
         {
-            Jobs.AvailableAmount--;
-
             if (Jobs.AvailableAmount < _employList.Count)
             {
                 FireEmploy();
@@ -64,6 +67,9 @@ public class Base_Factory : Base_Establishment
         {
             Jobs.AvailableAmount++;
         }
+
+        _Outcome = 0;
+        _Income = 0;
     }
 
 
@@ -74,11 +80,24 @@ public class Base_Factory : Base_Establishment
         employ.CurrentJob = Jobs.job;
         _employList.Add(employ);
         Jobs.AvailableAmount--;
+
+        Debug.Log("Hiring New Employ");
     }
     public void FireEmploy()
     {
-        _employList.Remove(_employList[0]);
-        _employList[0].Salary = 0;
-        _employList[0].CurrentWork = null;
+        Emploment firedEmployee = _employList[_employList.Count - 1];
+
+        // Set the employee's salary and work to null
+        firedEmployee.Salary = 0;
+        firedEmployee.CurrentWork = null;
+        firedEmployee.CurrentJob = null;
+
+        // Remove the last employee from the list
+        _employList.RemoveAt(_employList.Count - 1);
+
+        // Optionally, trim excess list capacity
+        _employList.TrimExcess();
+
+        Debug.Log("fired Employ");
     }
 }

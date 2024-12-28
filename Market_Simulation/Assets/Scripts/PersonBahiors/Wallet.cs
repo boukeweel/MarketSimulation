@@ -6,7 +6,7 @@ public class Wallet : MonoBehaviour
 {
     public float MoneyForLuxuryItem;
 
-    private float money = 2000;
+    [SerializeField] private float money = 2000;
 
     public float Money
     {
@@ -33,7 +33,7 @@ public class Wallet : MonoBehaviour
         MoneyForLuxuryItem = Money / 100;
     }
 
-    public void AddMoney(int amount)
+    public void AddMoney(float amount)
     {
         if (amount <= 0)
         {

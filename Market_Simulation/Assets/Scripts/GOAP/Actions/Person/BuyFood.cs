@@ -36,6 +36,16 @@ public class BuyFood : ActionBase<BuyFood.Data>
             }
         }
 
+        //get help from goverment to buy food
+        if (data.wallet.Money < 20)
+        {
+            float helpAmount = 100;
+            if (Goverment.instance.AllowedToHelp(helpAmount))
+            {
+                data.wallet.AddMoney(Goverment.instance.GiveMoneySupport(helpAmount));
+            }
+        }
+
         return ActionRunState.Continue;
     }
 

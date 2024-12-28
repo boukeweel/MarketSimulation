@@ -21,6 +21,8 @@ public class HungerBavhior : MonoBehaviour
     private void AddHunger()
     {
         Hunger += BioSign.HungerDepletionRate;
+
+        Hunger = Mathf.Clamp(Hunger, 0, BioSign.MaxHunger);
     }
 
 }

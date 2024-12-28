@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Data_Establishments : MonoBehaviour
@@ -44,6 +45,8 @@ public class Data_Establishments : MonoBehaviour
     [Header("Total and Average Wealth for Luxury Stores")]
     public List<float> TotalWealthsLuxuryStores = new List<float>();
     public List<float> AveragesWealthsLuxuryStores = new List<float>();
+
+    private List<float> GovermentWealth = new List<float>();
 
     void Start()
     {
@@ -129,8 +132,6 @@ public class Data_Establishments : MonoBehaviour
             luxuryStoreCount++;
             TotalEstablishmentCount++;
             TotalWealthEstablishments += luxuryStore.Money;
-
-
         }
 
         AverageWealthLuxuryStores = luxuryStoreCount > 0 ? TotalWealthLuxuryStores / luxuryStoreCount : 0;
@@ -145,5 +146,5 @@ public class Data_Establishments : MonoBehaviour
         TotalWealthsEstablishments.Add(TotalWealthEstablishments);
         AveragesWealthsEstablishments.Add(AverageWealthEstablishments);
     }
-
 }
+

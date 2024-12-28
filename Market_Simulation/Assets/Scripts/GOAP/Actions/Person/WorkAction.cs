@@ -29,7 +29,7 @@ public class WorkAction : ActionBase<WorkAction.Data>
     }
     public override void End(IMonoAgent agent, Data data)
     {
-        if (_endWorkDay)
+        if (_endWorkDay && data._Emploment.CurrentWork != null)
         {
             float AmountProduct = Random.Range(data._Emploment.CurrentJob.MinProductsCreatedInDay, data._Emploment.CurrentJob.MaxProductsCreatedInDay);
 

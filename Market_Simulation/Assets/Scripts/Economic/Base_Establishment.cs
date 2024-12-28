@@ -59,7 +59,7 @@ public class Base_Establishment : MonoBehaviour
     //If the establishment is makes products or sells them to people
     [HideInInspector] public TypeEstablishment TypeEstablishment;
 
-    [Space(10)] private float money = 10000;
+    [SerializeField] private float money = 10000;
 
     public float Money
     {

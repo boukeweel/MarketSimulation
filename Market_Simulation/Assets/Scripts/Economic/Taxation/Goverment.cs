@@ -11,15 +11,30 @@ public class Goverment : MonoBehaviour
     public float FactoryTax { get; private set; } = .2f;
 
     [SerializeField] private float money = 0;
+
+    [HideInInspector] public List<float> Moneys = new List<float>();
+
+    
     public float Money
     {
         get => money;
         set => money = Mathf.Round(value * 100) / 100; // Ensures only two decimal places
     }
 
+
+    
     void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
+        MainManger.instance.DayCycle.DayPassed.AddListener(AddTolist);
+    }
+    private void AddTolist()
+    {
+        Moneys.Add(Money);
     }
 
     public void GetMoney(float Amount)
