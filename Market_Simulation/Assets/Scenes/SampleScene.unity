@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &95367192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &173708472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +389,143 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173708468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cef53d855ccf0b46bcf004b27c4a52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goapSetBehaviour: {fileID: 0}
+  <DistanceMultiplier>k__BackingField: 1
+--- !u!1 &392213536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392213537}
+  - component: {fileID: 392213544}
+  - component: {fileID: 392213543}
+  - component: {fileID: 392213542}
+  - component: {fileID: 392213541}
+  - component: {fileID: 392213540}
+  - component: {fileID: 392213539}
+  - component: {fileID: 392213538}
+  m_Layer: 0
+  m_Name: TestPerson (24)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &392213537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1843152061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392213538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c38bf7245c13bb4aac0d6ca5f71c771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentWork: {fileID: 0}
+  Salary: 0
+  CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &392213539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc5fd00242f41c4187a5ce9475b0c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyForLuxuryItem: 0
+  money: 2000
+--- !u!114 &392213540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WantedLuxuryItem: 0
+--- !u!114 &392213541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e93d4bb3d5d2a408416e8abbf7c3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Hunger>k__BackingField: 0
+  BioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
+--- !u!114 &392213542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefferdFoodQuality: 1
+--- !u!114 &392213543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4039867b6eb7f749a2d72d5391aef1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goapRunner: {fileID: 1843152062}
+--- !u!114 &392213544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392213536}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cef53d855ccf0b46bcf004b27c4a52a, type: 3}
@@ -555,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &602863473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: d69f69944a4b6614fa441297ca701305, type: 2}
     AvailableAmount: 3
@@ -675,7 +816,10 @@ MonoBehaviour:
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 5
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 0
@@ -715,9 +859,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _foodAmounts:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
-    AvailableAmount: 12
+    AvailableAmount: 16
   - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
-    AvailableAmount: 12
+    AvailableAmount: 16
   _luxeryAmount:
   - ProductType: {fileID: 11400000, guid: af8a88e37e7478d46b62f21360e630a0, type: 2}
     AvailableAmount: 0
@@ -805,6 +949,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b98c71c9e5e49408ea9a60fa1ad754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &673539639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673539640}
+  - component: {fileID: 673539647}
+  - component: {fileID: 673539646}
+  - component: {fileID: 673539645}
+  - component: {fileID: 673539644}
+  - component: {fileID: 673539643}
+  - component: {fileID: 673539642}
+  - component: {fileID: 673539641}
+  m_Layer: 0
+  m_Name: TestPerson (23)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673539640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1843152061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673539641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c38bf7245c13bb4aac0d6ca5f71c771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentWork: {fileID: 0}
+  Salary: 0
+  CurrentJob: {fileID: 0}
+  EndWorkDay:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &673539642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc5fd00242f41c4187a5ce9475b0c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyForLuxuryItem: 0
+  money: 2000
+--- !u!114 &673539643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WantedLuxuryItem: 0
+--- !u!114 &673539644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e93d4bb3d5d2a408416e8abbf7c3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Hunger>k__BackingField: 0
+  BioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
+--- !u!114 &673539645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefferdFoodQuality: 1
+--- !u!114 &673539646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4039867b6eb7f749a2d72d5391aef1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goapRunner: {fileID: 1843152062}
+--- !u!114 &673539647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673539639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cef53d855ccf0b46bcf004b27c4a52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goapSetBehaviour: {fileID: 0}
+  <DistanceMultiplier>k__BackingField: 1
 --- !u!1 &781082606
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &781082610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,14 +1254,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 2c4ab1784a638724192c6f33937ac699, type: 2}
-    AvailableAmount: 2
+    AvailableAmount: 1
   _employList: []
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 3
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: a9a6e35288ddd924c881572e18fbda55, type: 2}
     AvailableAmount: 0
@@ -1096,6 +1382,7 @@ MonoBehaviour:
   FactoryLuxuryEstablishments: []
   StoreFoodEstablishments: []
   StoreLuxuryEstablishments: []
+  Goverment: {fileID: 0}
 --- !u!1 &938907024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &938907028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,11 +1551,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
+  money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
-    AvailableAmount: 4
+    AvailableAmount: 8
   - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
-    AvailableAmount: 4
+    AvailableAmount: 8
   MaxAmountOfOneFoodType: 50
 --- !u!4 &975074708
 Transform:
@@ -1353,6 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1020360130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,14 +1741,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: d69f69944a4b6614fa441297ca701305, type: 2}
-    AvailableAmount: 3
+    AvailableAmount: 2
   _employList: []
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 5
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 0
@@ -1547,6 +1841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1102750400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,6 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1167271989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,6 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1207735649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,6 +2252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1353757094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,14 +2366,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
-    AvailableAmount: 4
+    AvailableAmount: 7
   _employList: []
-  _BaseSalary: 2000
+  _BaseSalary: 2200
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 7
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 0
@@ -2185,6 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1431013665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,6 +2565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 4
@@ -2269,7 +2573,10 @@ MonoBehaviour:
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 7
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 0
@@ -2305,14 +2612,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: ea8257777a682f542a179e2427bab3c7, type: 2}
-    AvailableAmount: 2
+    AvailableAmount: 1
   _employList: []
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 3
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: af8a88e37e7478d46b62f21360e630a0, type: 2}
     AvailableAmount: 0
@@ -2378,6 +2689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   luxeryTypes: []
 --- !u!1 &1583039885
 GameObject:
@@ -2448,6 +2760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1583039889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2584,6 +2897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1627137892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2720,6 +3034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1628423664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2894,6 +3209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1740242068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,6 +3346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1758874845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,6 +3483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1771090312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3302,6 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1776101292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3400,6 +3719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
+  money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 4
@@ -3525,6 +3845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1835343826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3661,6 +3982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1838619688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3795,6 +4117,8 @@ Transform:
   - {fileID: 938907025}
   - {fileID: 1776101289}
   - {fileID: 781082607}
+  - {fileID: 673539640}
+  - {fileID: 392213537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843152062
@@ -3895,6 +4219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1893164169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,6 +4356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &1931386051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4167,6 +4493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyForLuxuryItem: 0
+  money: 2000
 --- !u!114 &2017250090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4265,6 +4592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 0
+  money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
     AvailableAmount: 5
@@ -4272,7 +4600,10 @@ MonoBehaviour:
   _BaseSalary: 2000
   _Income: 0
   _Outcome: 0
-  ProfitAmountTillNewHire: 500
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 7
+  _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 0
@@ -4323,6 +4654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductType: 0
   TypeEstablishment: 1
+  money: 10000
   FoodTypes:
   - ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
     AvailableAmount: 4
@@ -4354,6 +4686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104384267}
   - component: {fileID: 2104384266}
+  - component: {fileID: 2104384268}
   m_Layer: 0
   m_Name: Goverment
   m_TagString: Untagged
@@ -4373,7 +4706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c23ec6675454749aa247ca97b8455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  Moneys: []
 --- !u!4 &2104384267
 Transform:
   m_ObjectHideFlags: 0
@@ -4389,6 +4722,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104384268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104384265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc8f75ccd2bc0e47915b93c645f4016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProductType: 0
+  TypeEstablishment: 0
+  money: 0
+  Jobs:
+    job: {fileID: 0}
+    AvailableAmount: 2
+  _employList: []
+  _BaseSalary: 2000
+  _Income: 0
+  _Outcome: 0
+  _profitAmountTillNewHire: 500
+  _profitAmountTillSalaryUp: 1000
+  _MaxAmountOfJobs: 2
+  _allowedToHirePeople: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

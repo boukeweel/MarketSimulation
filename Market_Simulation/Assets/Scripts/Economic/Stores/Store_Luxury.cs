@@ -24,7 +24,7 @@ public class Store_Luxury : Base_Establishment
     {
         for (int i = 0; i < luxeryTypes.Count; i++)
         {
-            if (luxeryTypes[i].LuxuryType.ShopSellPrice < budget && luxeryTypes[i].AvailableAmount > 0)
+            if (luxeryTypes[i].LuxuryType.ShopSellPrice + (luxeryTypes[i].LuxuryType.ShopSellPrice * Goverment.instance.LuxuryTax) < budget && luxeryTypes[i].AvailableAmount > 0)
             {
                 return i;
             }

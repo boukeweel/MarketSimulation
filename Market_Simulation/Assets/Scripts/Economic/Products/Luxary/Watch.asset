@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UniqueID: 1
   ProductName: Watch
-  ShopSellPrice: 100
-  ShopBuyPrice: 80
+  ShopSellPrice: 40
+  ShopBuyPrice: 25

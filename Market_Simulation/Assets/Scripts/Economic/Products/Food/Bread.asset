@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UniqueID: 1
   ProductName: Bread
-  ShopSellPrice: 10
-  ShopBuyPrice: 8
+  ShopSellPrice: 12
+  ShopBuyPrice: 10
   Quality: 1
   Nutrition: 10

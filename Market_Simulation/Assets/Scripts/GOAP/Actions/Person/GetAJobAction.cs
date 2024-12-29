@@ -33,6 +33,12 @@ public class GetAJobAction : ActionBase<GetAJobAction.Data>
                     return ActionRunState.Stop;
                 }
             }
+
+            if (MainManger.instance.EstablishmentHolder.Goverment.Jobs.AvailableAmount > 0)
+            {
+                MainManger.instance.EstablishmentHolder.Goverment.HireEmploy(data._Emploment);
+                return ActionRunState.Stop;
+            }
         }
 
         return ActionRunState.Continue;

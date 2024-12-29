@@ -30,7 +30,7 @@ public class Wallet : MonoBehaviour
 
     private void UpdateLuxuryBudget()
     {
-        MoneyForLuxuryItem = Money / 100;
+        MoneyForLuxuryItem = Money / 50;
     }
 
     public void AddMoney(float amount)

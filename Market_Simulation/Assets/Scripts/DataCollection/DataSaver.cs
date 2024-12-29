@@ -12,24 +12,33 @@ public class DataSaver : MonoBehaviour
 
     private void SaveListsToFiles()
     {
-        SaveListToFile("TotalWealthsEstablishments.txt", DataMangement.instance.Data_Establishments.TotalWealthsEstablishments);
-        SaveListToFile("AveragesWealthsEstablishments.txt", DataMangement.instance.Data_Establishments.AveragesWealthsEstablishments);
+        SaveListToFile("TotalWealthsEstablishments.txt",
+            DataMangement.instance.Data_Establishments.TotalWealthsEstablishments);
+        SaveListToFile("AveragesWealthsEstablishments.txt",
+            DataMangement.instance.Data_Establishments.AveragesWealthsEstablishments);
 
         // Save lists related to Food Factories
-        SaveListToFile("TotalWealthsFoodFactories.txt", DataMangement.instance.Data_Establishments.TotalWealthsFoodFactories);
-        SaveListToFile("AveragesWealthsFoodFactories.txt", DataMangement.instance.Data_Establishments.AveragesWealthsFoodFactories);
+        SaveListToFile("TotalWealthsFoodFactories.txt",
+            DataMangement.instance.Data_Establishments.TotalWealthsFoodFactories);
+        SaveListToFile("AveragesWealthsFoodFactories.txt",
+            DataMangement.instance.Data_Establishments.AveragesWealthsFoodFactories);
 
         // Save lists related to Luxury Factories
-        SaveListToFile("TotalWealthsLuxuryFactories.txt", DataMangement.instance.Data_Establishments.TotalWealthsLuxuryFactories);
-        SaveListToFile("AveragesWealthsLuxuryFactories.txt", DataMangement.instance.Data_Establishments.AveragesWealthsLuxuryFactories);
+        SaveListToFile("TotalWealthsLuxuryFactories.txt",
+            DataMangement.instance.Data_Establishments.TotalWealthsLuxuryFactories);
+        SaveListToFile("AveragesWealthsLuxuryFactories.txt",
+            DataMangement.instance.Data_Establishments.AveragesWealthsLuxuryFactories);
 
         // Save lists related to Food Stores
         SaveListToFile("TotalWealthsFoodStores.txt", DataMangement.instance.Data_Establishments.TotalWealthsFoodStores);
-        SaveListToFile("AveragesWealthsFoodStores.txt", DataMangement.instance.Data_Establishments.AveragesWealthsFoodStores);
+        SaveListToFile("AveragesWealthsFoodStores.txt",
+            DataMangement.instance.Data_Establishments.AveragesWealthsFoodStores);
 
         // Save lists related to Luxury Stores
-        SaveListToFile("TotalWealthsLuxuryStores.txt", DataMangement.instance.Data_Establishments.TotalWealthsLuxuryStores);
-        SaveListToFile("AveragesWealthsLuxuryStores.txt", DataMangement.instance.Data_Establishments.AveragesWealthsLuxuryStores);
+        SaveListToFile("TotalWealthsLuxuryStores.txt",
+            DataMangement.instance.Data_Establishments.TotalWealthsLuxuryStores);
+        SaveListToFile("AveragesWealthsLuxuryStores.txt",
+            DataMangement.instance.Data_Establishments.AveragesWealthsLuxuryStores);
 
         //save list of people wealths
         SaveListToFile("TotalWealthPeople.txt", DataMangement.instance.Data_People.TotalWealthsPeople);
@@ -71,10 +80,21 @@ public class DataSaver : MonoBehaviour
         {
             foreach (float value in dataList)
             {
-                writer.WriteLine(value);
+                // If the value is an integer, write it without decimal places
+                if (value == (int)value)
+                {
+                    writer.WriteLine(value.ToString("0"));
+                }
+                else
+                {
+                    // Otherwise, format the value with one decimal place and replace dot with a comma
+                    string formattedValue = value.ToString("0.0").Replace('.', ',');
+                    writer.WriteLine(formattedValue);
+                }
             }
         }
 
         Debug.Log($"Saved {fileName} with {dataList.Count} entries at {filePath}");
     }
 }
+

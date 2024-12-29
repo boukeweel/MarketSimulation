@@ -11,11 +11,17 @@ public class Base_Factory : Base_Establishment
     [SerializeField] protected List<Emploment> _employList = new List<Emploment>();
 
     [SerializeField] protected int _BaseSalary = 2000;
+    private int _LowestSalary = 2000;
+    private int _highestSalary = 3000;
 
-    [SerializeField] protected float _Income;
-    [SerializeField] protected float _Outcome;
+    [SerializeField] public float _Income;
+    [SerializeField] public float _Outcome;
 
-    [SerializeField] private int ProfitAmountTillNewHire = 500;
+    [Header("Adding jobs")]
+    [SerializeField] private int _profitAmountTillNewHire = 500;
+    [SerializeField] private int _profitAmountTillSalaryUp = 1000;
+    [SerializeField] private int _MaxAmountOfJobs = 10;
+    [SerializeField] private bool _allowedToHirePeople = true;
 
     protected virtual void Start()
     {
@@ -57,15 +63,20 @@ public class Base_Factory : Base_Establishment
 
         if (profit < 0)
         {
+            _BaseSalary = _LowestSalary;
             if (Jobs.AvailableAmount < _employList.Count)
             {
                 FireEmploy();
             }
         }
 
-        if (profit > ProfitAmountTillNewHire)
+        if (profit > _profitAmountTillNewHire && _allowedToHirePeople && _employList.Count < _MaxAmountOfJobs)
         {
             Jobs.AvailableAmount++;
+        }
+        else if(profit > _profitAmountTillSalaryUp && _BaseSalary < _highestSalary)
+        {
+            _BaseSalary += 100;
         }
 
         _Outcome = 0;

@@ -10,5 +10,5 @@ public class EstablishmentHolder : MonoBehaviour
     public List<Store_Food> StoreFoodEstablishments = new List<Store_Food>();
     public List<Store_Luxury> StoreLuxuryEstablishments = new List<Store_Luxury>();
 
-
+    public Base_Factory Goverment;
 }

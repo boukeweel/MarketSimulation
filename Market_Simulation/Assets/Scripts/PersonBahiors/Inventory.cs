@@ -74,6 +74,9 @@ public class Inventory : MonoBehaviour
 
     public void AddLuxury(Luxury luxury)
     {
+
+
+
         for (int i = 0; i < luxeryItems.Count; i++)
         {
             if (luxeryItems[i].ProductType.UniqueID == luxury.UniqueID)
@@ -82,33 +85,13 @@ public class Inventory : MonoBehaviour
                 FoodData updatedProductData = foodItems[i];
                 updatedProductData.AvailableAmount++;
                 foodItems[i] = updatedProductData;
+                DataMangement.instance.Data_Products.RemoveProductLuxury(luxury.UniqueID);
                 return;
             }
         }
 
         // If food type does not exist, add a new entry
-        foodItems.Add(new FoodData { ProductType = luxury, AvailableAmount = 1 });
-    }
-    private Luxury RemoveLuxury()
-    {
-        for (int i = 0; i < foodItems.Count; i++)
-        {
-            if (luxeryItems[i].AvailableAmount > 0)
-            {
-                // Deduct the amount
-                LuxeryData updatedProductData = luxeryItems[i];
-                updatedProductData.AvailableAmount--;
-                DataMangement.instance.Data_Products.RemoveProductLuxury(updatedProductData.LuxuryType.UniqueID);
-                luxeryItems[i] = updatedProductData;
-
-                // Return the FoodTypeSO
-                return updatedProductData.LuxuryType;
-            }
-        }
-
-        // If no valid food was found
-        Debug.LogError("No food with enough available amount.");
-        return null;
+        luxeryItems.Add(new LuxeryData { ProductType = luxury, AvailableAmount = 1 });
     }
     public int WantLuxury()
     {

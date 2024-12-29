@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UniqueID: 2
   ProductName: Lamp
-  ShopSellPrice: 200
-  ShopBuyPrice: 150
+  ShopSellPrice: 60
+  ShopBuyPrice: 30

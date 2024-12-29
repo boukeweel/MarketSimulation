@@ -27,7 +27,7 @@ public class PersonBrian : MonoBehaviour
     void Start()
     {
         DataMangement.instance.Data_People.People.Add(this.gameObject);
-        MainManger.instance.DayCycle.MonthPassed.AddListener(_inventory.SetWantLuxuryItem);
+        MainManger.instance.DayCycle.DayPassed.AddListener(_inventory.SetWantLuxuryItem);
     }
     private void Update()
     {

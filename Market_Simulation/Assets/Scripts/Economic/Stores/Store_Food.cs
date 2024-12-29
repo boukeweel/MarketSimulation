@@ -32,7 +32,7 @@ public class Store_Food : Base_Establishment
         {
             if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality == preferredQuality)
             {
-                if (FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
+                if (FoodTypes[i].FoodType.ShopSellPrice + (FoodTypes[i].FoodType.ShopSellPrice * tax) <= budget)
                 {
                     return i;
                 }
@@ -48,7 +48,7 @@ public class Store_Food : Base_Establishment
         {
             for (int i = 0; i < FoodTypes.Count; i++)
             {
-                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality > preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
+                if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality > preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + (FoodTypes[i].FoodType.ShopSellPrice * tax) <= budget)
                 {
                     return i;
                 }
@@ -64,7 +64,7 @@ public class Store_Food : Base_Establishment
         float tax = Goverment.instance.FoodTax;
         for (int i = 0; i < FoodTypes.Count; i++)
         {
-            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality < preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + tax <= budget)
+            if (FoodTypes[i].AvailableAmount > 0 && FoodTypes[i].FoodType.Quality < preferredQuality && FoodTypes[i].FoodType.ShopSellPrice + (FoodTypes[i].FoodType.ShopSellPrice * tax) <= budget)
             {
                 return i;
             }

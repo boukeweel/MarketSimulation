@@ -10,22 +10,15 @@ public class Goverment : MonoBehaviour
     public float LuxuryTax { get; private set; } = .2f;
     public float FactoryTax { get; private set; } = .2f;
 
-    [SerializeField] private float money = 0;
-
     [HideInInspector] public List<float> Moneys = new List<float>();
 
-    
-    public float Money
-    {
-        get => money;
-        set => money = Mathf.Round(value * 100) / 100; // Ensures only two decimal places
-    }
-
-
+    private Base_Factory _govermentWork;
     
     void Awake()
     {
         instance = this;
+        _govermentWork = GetComponent<Base_Factory>();
+        MainManger.instance.EstablishmentHolder.Goverment = _govermentWork;
     }
 
     void Start()
@@ -34,17 +27,18 @@ public class Goverment : MonoBehaviour
     }
     private void AddTolist()
     {
-        Moneys.Add(Money);
+        Moneys.Add(_govermentWork.Money);
     }
 
     public void GetMoney(float Amount)
     {
-        Money += Amount;
+        _govermentWork.Money += Amount;
+        _govermentWork._Income += Amount;
     }
 
     public bool AllowedToHelp(float NeedCash)
     {
-        if(NeedCash > Money)
+        if(NeedCash > _govermentWork.Money)
             return false;
 
         return true;
@@ -52,7 +46,8 @@ public class Goverment : MonoBehaviour
 
     public float GiveMoneySupport(float needed)
     {
-        Money -= needed;
+        _govermentWork.Money -= needed;
+        _govermentWork._Outcome += needed;
         return needed;
     }
 }
