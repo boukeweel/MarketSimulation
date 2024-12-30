@@ -50,10 +50,11 @@ public class Food_Factory : Base_Factory
                 if (!store.WantedToBuyFood(_product.FoodType)) break;
 
                 store.BuyOneProduct(_product.FoodType);
+                _product.AvailableAmount--;
+
                 int price = _product.FoodType.ShopBuyPrice;
                 Money += price;
                 _Income += price;
-                _product.AvailableAmount--;
             }
 
             if (_product.AvailableAmount <= 0) break;

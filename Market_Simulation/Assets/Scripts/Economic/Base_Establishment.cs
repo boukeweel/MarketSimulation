@@ -49,6 +49,7 @@ public enum TypeEstablishment
     Factory,
     Store,
     Both,
+    Govermant,
 }
 
 public class Base_Establishment : MonoBehaviour

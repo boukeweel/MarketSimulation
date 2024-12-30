@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public struct ProductAmount
@@ -80,13 +81,13 @@ public class Data_Products : MonoBehaviour
             }
         }
     }
-    public void RemoveProductFood(int uniqueID, int Amount = 1)
+    public void RemoveProductFood(int uniqueID)
     {
         foreach (FoodData FoodData in _foodAmounts)
         {
             if (FoodData.FoodType.UniqueID == uniqueID)
             {
-                FoodData.AvailableAmount -= Amount;
+                FoodData.AvailableAmount--;
                 return;
             }
         }

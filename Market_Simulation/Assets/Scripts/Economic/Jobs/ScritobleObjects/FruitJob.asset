@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8039769326ad2846b790f8d3da51de6, type: 3}
   m_Name: FruitJob
   m_EditorClassIdentifier: 
-  MaxProductsCreatedInDay: 3
+  MaxProductsCreatedInDay: 2.75
   MinProductsCreatedInDay: 1.7

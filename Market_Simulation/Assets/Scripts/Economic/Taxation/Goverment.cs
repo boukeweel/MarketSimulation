@@ -8,7 +8,7 @@ public class Goverment : MonoBehaviour
 
     public float FoodTax { get; private set; } = .1f;
     public float LuxuryTax { get; private set; } = .2f;
-    public float FactoryTax { get; private set; } = .2f;
+    public float FactoryTax { get; private set; } = .175f;
 
     [HideInInspector] public List<float> Moneys = new List<float>();
 
@@ -18,6 +18,7 @@ public class Goverment : MonoBehaviour
     {
         instance = this;
         _govermentWork = GetComponent<Base_Factory>();
+        _govermentWork.TypeEstablishment = TypeEstablishment.Govermant;
         MainManger.instance.EstablishmentHolder.Goverment = _govermentWork;
     }
 

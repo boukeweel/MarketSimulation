@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<FoodData> foodItems = new List<FoodData>();
-    private List<LuxeryData> luxeryItems = new List<LuxeryData>();
+    [SerializeField] private List<FoodData> foodItems = new List<FoodData>();
+    [SerializeField] private List<LuxeryData> luxeryItems = new List<LuxeryData>();
 
     public bool WantedLuxuryItem = false;
 
@@ -32,14 +32,11 @@ public class Inventory : MonoBehaviour
         {
             if (foodItems[i].AvailableAmount > 0)
             {
-                // Deduct the amount
-                FoodData updatedProductData = foodItems[i];
-                updatedProductData.AvailableAmount--;
-                DataMangement.instance.Data_Products.RemoveProductFood(updatedProductData.FoodType.UniqueID);
-                foodItems[i] = updatedProductData;
+                foodItems[i].AvailableAmount--;
+                DataMangement.instance.Data_Products.RemoveProductFood(foodItems[i].FoodType.UniqueID);
 
                 // Return the FoodTypeSO
-                return updatedProductData.FoodType;
+                return foodItems[i].FoodType;
             }
         }
 
@@ -74,17 +71,12 @@ public class Inventory : MonoBehaviour
 
     public void AddLuxury(Luxury luxury)
     {
-
-
-
         for (int i = 0; i < luxeryItems.Count; i++)
         {
             if (luxeryItems[i].ProductType.UniqueID == luxury.UniqueID)
             {
                 // Update the quantity
-                FoodData updatedProductData = foodItems[i];
-                updatedProductData.AvailableAmount++;
-                foodItems[i] = updatedProductData;
+                luxeryItems[i].AvailableAmount++;
                 DataMangement.instance.Data_Products.RemoveProductLuxury(luxury.UniqueID);
                 return;
             }
@@ -92,6 +84,7 @@ public class Inventory : MonoBehaviour
 
         // If food type does not exist, add a new entry
         luxeryItems.Add(new LuxeryData { ProductType = luxury, AvailableAmount = 1 });
+        DataMangement.instance.Data_Products.RemoveProductLuxury(luxury.UniqueID);
     }
     public int WantLuxury()
     {

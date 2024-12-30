@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &95367193
 MonoBehaviour:
@@ -341,6 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &173708473
 MonoBehaviour:
@@ -389,143 +393,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173708468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cef53d855ccf0b46bcf004b27c4a52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goapSetBehaviour: {fileID: 0}
-  <DistanceMultiplier>k__BackingField: 1
---- !u!1 &392213536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 392213537}
-  - component: {fileID: 392213544}
-  - component: {fileID: 392213543}
-  - component: {fileID: 392213542}
-  - component: {fileID: 392213541}
-  - component: {fileID: 392213540}
-  - component: {fileID: 392213539}
-  - component: {fileID: 392213538}
-  m_Layer: 0
-  m_Name: TestPerson (24)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &392213537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1843152061}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &392213538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c38bf7245c13bb4aac0d6ca5f71c771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentWork: {fileID: 0}
-  Salary: 0
-  CurrentJob: {fileID: 0}
-  EndWorkDay:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &392213539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc5fd00242f41c4187a5ce9475b0c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoneyForLuxuryItem: 0
-  money: 2000
---- !u!114 &392213540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WantedLuxuryItem: 0
---- !u!114 &392213541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e93d4bb3d5d2a408416e8abbf7c3cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Hunger>k__BackingField: 0
-  BioSign: {fileID: 11400000, guid: df4af2f9bd6bbcc45bb5f93fcde13e69, type: 2}
---- !u!114 &392213542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26a8cc96422350f4fb3fc4fa52a9052d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PrefferdFoodQuality: 1
---- !u!114 &392213543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4039867b6eb7f749a2d72d5391aef1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goapRunner: {fileID: 1843152062}
---- !u!114 &392213544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392213536}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cef53d855ccf0b46bcf004b27c4a52a, type: 3}
@@ -707,6 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &602863474
 MonoBehaviour:
@@ -813,7 +682,9 @@ MonoBehaviour:
     job: {fileID: 11400000, guid: d69f69944a4b6614fa441297ca701305, type: 2}
     AvailableAmount: 3
   _employList: []
-  _BaseSalary: 2000
+  _BaseSalary: 2200
+  _LowestSalary: 2200
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500
@@ -1031,6 +902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &673539644
 MonoBehaviour:
@@ -1168,6 +1041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &781082611
 MonoBehaviour:
@@ -1260,7 +1135,9 @@ MonoBehaviour:
     AvailableAmount: 1
   _employList: []
   _BaseSalary: 2000
-  _Income: 0
+  _LowestSalary: 2000
+  _highestSalary: 3000
+  _Income: 2000
   _Outcome: 0
   _profitAmountTillNewHire: 500
   _profitAmountTillSalaryUp: 1000
@@ -1465,6 +1342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &938907029
 MonoBehaviour:
@@ -1557,7 +1436,7 @@ MonoBehaviour:
     AvailableAmount: 8
   - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 8
-  MaxAmountOfOneFoodType: 50
+  MaxAmountOfOneFoodType: 75
 --- !u!4 &975074708
 Transform:
   m_ObjectHideFlags: 0
@@ -1655,6 +1534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1020360131
 MonoBehaviour:
@@ -1746,7 +1627,9 @@ MonoBehaviour:
     job: {fileID: 11400000, guid: d69f69944a4b6614fa441297ca701305, type: 2}
     AvailableAmount: 2
   _employList: []
-  _BaseSalary: 2000
+  _BaseSalary: 2200
+  _LowestSalary: 2200
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500
@@ -1854,6 +1737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1102750401
 MonoBehaviour:
@@ -1991,6 +1876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1167271990
 MonoBehaviour:
@@ -2128,6 +2015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1207735650
 MonoBehaviour:
@@ -2265,6 +2154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1353757095
 MonoBehaviour:
@@ -2369,14 +2260,16 @@ MonoBehaviour:
   money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
-    AvailableAmount: 7
+    AvailableAmount: 6
   _employList: []
-  _BaseSalary: 2200
+  _BaseSalary: 2300
+  _LowestSalary: 2300
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500
   _profitAmountTillSalaryUp: 1000
-  _MaxAmountOfJobs: 7
+  _MaxAmountOfJobs: 6
   _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
@@ -2500,6 +2393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1431013666
 MonoBehaviour:
@@ -2568,14 +2463,16 @@ MonoBehaviour:
   money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
-    AvailableAmount: 4
+    AvailableAmount: 6
   _employList: []
-  _BaseSalary: 2000
+  _BaseSalary: 2300
+  _LowestSalary: 2300
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500
   _profitAmountTillSalaryUp: 1000
-  _MaxAmountOfJobs: 7
+  _MaxAmountOfJobs: 6
   _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
@@ -2618,7 +2515,9 @@ MonoBehaviour:
     AvailableAmount: 1
   _employList: []
   _BaseSalary: 2000
-  _Income: 0
+  _LowestSalary: 2000
+  _highestSalary: 3000
+  _Income: 2000
   _Outcome: 0
   _profitAmountTillNewHire: 500
   _profitAmountTillSalaryUp: 1000
@@ -2773,6 +2672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1583039890
 MonoBehaviour:
@@ -2910,6 +2811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1627137893
 MonoBehaviour:
@@ -3047,6 +2950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1628423665
 MonoBehaviour:
@@ -3222,6 +3127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1740242069
 MonoBehaviour:
@@ -3359,6 +3266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1758874846
 MonoBehaviour:
@@ -3496,6 +3405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1771090313
 MonoBehaviour:
@@ -3633,6 +3544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1776101293
 MonoBehaviour:
@@ -3725,7 +3638,7 @@ MonoBehaviour:
     AvailableAmount: 4
   - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 4
-  MaxAmountOfOneFoodType: 50
+  MaxAmountOfOneFoodType: 75
 --- !u!4 &1822397709
 Transform:
   m_ObjectHideFlags: 0
@@ -3858,6 +3771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1835343827
 MonoBehaviour:
@@ -3995,6 +3910,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1838619689
 MonoBehaviour:
@@ -4118,7 +4035,6 @@ Transform:
   - {fileID: 1776101289}
   - {fileID: 781082607}
   - {fileID: 673539640}
-  - {fileID: 392213537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843152062
@@ -4232,6 +4148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1893164170
 MonoBehaviour:
@@ -4369,6 +4287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &1931386052
 MonoBehaviour:
@@ -4506,6 +4426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d018a3ffc720fb54d89cb560d48386cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodItems: []
+  luxeryItems: []
   WantedLuxuryItem: 0
 --- !u!114 &2017250091
 MonoBehaviour:
@@ -4595,14 +4517,16 @@ MonoBehaviour:
   money: 10000
   Jobs:
     job: {fileID: 11400000, guid: 1f7075fa343ed91419fa0a6ba37db80b, type: 2}
-    AvailableAmount: 5
+    AvailableAmount: 4
   _employList: []
-  _BaseSalary: 2000
+  _BaseSalary: 2300
+  _LowestSalary: 2300
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500
   _profitAmountTillSalaryUp: 1000
-  _MaxAmountOfJobs: 7
+  _MaxAmountOfJobs: 6
   _allowedToHirePeople: 1
   _product:
     ProductType: {fileID: 11400000, guid: 14d69f7f68371d7498e01e3cc5ea449a, type: 2}
@@ -4660,7 +4584,7 @@ MonoBehaviour:
     AvailableAmount: 4
   - ProductType: {fileID: 11400000, guid: 1ee0f8ac6e74b474282954e93df31fe6, type: 2}
     AvailableAmount: 4
-  MaxAmountOfOneFoodType: 50
+  MaxAmountOfOneFoodType: 75
 --- !u!4 &2090124342
 Transform:
   m_ObjectHideFlags: 0
@@ -4739,9 +4663,11 @@ MonoBehaviour:
   money: 0
   Jobs:
     job: {fileID: 0}
-    AvailableAmount: 2
+    AvailableAmount: 1
   _employList: []
   _BaseSalary: 2000
+  _LowestSalary: 2000
+  _highestSalary: 3000
   _Income: 0
   _Outcome: 0
   _profitAmountTillNewHire: 500

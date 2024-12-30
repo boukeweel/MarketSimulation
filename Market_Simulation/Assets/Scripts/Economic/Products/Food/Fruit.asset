@@ -15,6 +15,6 @@ MonoBehaviour:
   UniqueID: 4
   ProductName: Fruit
   ShopSellPrice: 16
-  ShopBuyPrice: 14
+  ShopBuyPrice: 13
   Quality: 2
   Nutrition: 12

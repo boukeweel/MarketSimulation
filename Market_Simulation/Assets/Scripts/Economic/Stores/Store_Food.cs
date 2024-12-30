@@ -77,14 +77,11 @@ public class Store_Food : Base_Establishment
     {
         if (foodIndex >= 0 && foodIndex < FoodTypes.Count)
         {
-            FoodData foodData = FoodTypes[foodIndex];
-
-            if (foodData.AvailableAmount > 0)
+            if (FoodTypes[foodIndex].AvailableAmount > 0)
             {
-                foodData.AvailableAmount--;
-                FoodTypes[foodIndex] = foodData;
-                Money += foodData.FoodType.ShopSellPrice;
-                return foodData.FoodType;
+                FoodTypes[foodIndex].AvailableAmount--;
+                Money += FoodTypes[foodIndex].FoodType.ShopSellPrice;
+                return FoodTypes[foodIndex].FoodType;
             }
         }
         return null;
@@ -110,12 +107,10 @@ public class Store_Food : Base_Establishment
         {
             if (FoodTypes[i].FoodType.UniqueID == foodType.UniqueID)
             {
-                FoodData foodData = FoodTypes[i];
-                foodData.AvailableAmount++;
-                FoodTypes[i] = foodData;
-                tax = foodData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
+                FoodTypes[i].AvailableAmount++;
+                tax = FoodTypes[i].ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
                 Goverment.instance.GetMoney(tax);
-                Money -= foodData.ProductType.ShopBuyPrice + tax;
+                Money -= FoodTypes[i].ProductType.ShopBuyPrice + tax;
                 return;
             }
         }
@@ -123,7 +118,7 @@ public class Store_Food : Base_Establishment
         FoodData newFoodData = new FoodData { };
         newFoodData.FoodType = foodType;
         newFoodData.AvailableAmount++;
-        Money -= newFoodData.ProductType.ShopBuyPrice;
+
         tax = newFoodData.ProductType.ShopBuyPrice * Goverment.instance.FactoryTax;
         Goverment.instance.GetMoney(tax);
         Money -= newFoodData.ProductType.ShopBuyPrice + tax;

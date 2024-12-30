@@ -10,10 +10,12 @@ public class Base_Factory : Base_Establishment
     public AvailableJobs Jobs;
     [SerializeField] protected List<Emploment> _employList = new List<Emploment>();
 
-    [SerializeField] protected int _BaseSalary = 2000;
-    private int _LowestSalary = 2000;
-    private int _highestSalary = 3000;
+    [Header("Salary numbers")]
+    [SerializeField] protected int _BaseSalary = 2100;
+    [SerializeField] private int _LowestSalary = 2100;
+    [SerializeField] private int _highestSalary = 3000;
 
+    [Header("Income and Outcome of jobs")]
     [SerializeField] public float _Income;
     [SerializeField] public float _Outcome;
 
@@ -38,10 +40,10 @@ public class Base_Factory : Base_Establishment
             _Outcome += employ.Salary;
         }
 
-        if (Money < 0)
+        if (Money < 0 && TypeEstablishment != TypeEstablishment.Govermant)
         {
             float needed = -Money;
-            Debug.LogWarning(needed);
+            Debug.LogWarning(needed +  " factory: " +gameObject.name);
             AskLoan(needed);
         }
            

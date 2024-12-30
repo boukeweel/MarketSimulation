@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8039769326ad2846b790f8d3da51de6, type: 3}
   m_Name: BreadJob
   m_EditorClassIdentifier: 
-  MaxProductsCreatedInDay: 3.3
-  MinProductsCreatedInDay: 2.5
+  MaxProductsCreatedInDay: 3.1
+  MinProductsCreatedInDay: 2.4

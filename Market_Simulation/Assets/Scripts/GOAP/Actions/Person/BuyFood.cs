@@ -22,6 +22,16 @@ public class BuyFood : ActionBase<BuyFood.Data>
             return ActionRunState.Stop;
         }
 
+        //get help from goverment to buy food
+        if (data.wallet.Money < 20)
+        {
+            float helpAmount = 100;
+            if (Goverment.instance.AllowedToHelp(helpAmount))
+            {
+                data.wallet.AddMoney(Goverment.instance.GiveMoneySupport(helpAmount));
+            }
+        }
+
         foreach (Store_Food foodStore in MainManger.instance.EstablishmentHolder.StoreFoodEstablishments)
         {
             int foodindex = foodStore.FindFoodToBuyPerson(data.wallet.Money, data.Brain.PrefferdFoodQuality);
@@ -35,17 +45,6 @@ public class BuyFood : ActionBase<BuyFood.Data>
                 data.Brain.PrefferdFoodQuality = foodType.Quality;
             }
         }
-
-        //get help from goverment to buy food
-        if (data.wallet.Money < 20)
-        {
-            float helpAmount = 100;
-            if (Goverment.instance.AllowedToHelp(helpAmount))
-            {
-                data.wallet.AddMoney(Goverment.instance.GiveMoneySupport(helpAmount));
-            }
-        }
-
         return ActionRunState.Continue;
     }
 

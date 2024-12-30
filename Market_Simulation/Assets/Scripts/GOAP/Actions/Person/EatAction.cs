@@ -28,7 +28,8 @@ public class EatAction : ActionBase<EatAction.Data>
 
         if (data.Inventory.GetTotalFoodAmount() > 0)
         {
-            data.Hunger.Hunger -= data.Inventory.RemoveFood().Nutrition;
+            FoodTypeSO food = data.Inventory.RemoveFood();
+            data.Hunger.Hunger -= food.Nutrition;
         }
         else
         {
